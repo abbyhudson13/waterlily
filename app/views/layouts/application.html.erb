@@ -9,12 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
   </head>
 
   <body>
+
     <%= yield %>
   </body>
 </html>
