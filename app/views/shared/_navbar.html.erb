@@ -11,17 +11,26 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
+        <%= link_to "HOME", "#", class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Messages", "#", class: "nav-link" %>
+        <%= link_to "SPECIAL OFFERS", "#", class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          TREATMENTS
+        </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Action", "#", class: "dropdown-item" %>
           <%= link_to "Another action", "#", class: "dropdown-item" %>
         </div>
+      </li>
+      <li class="nav-item">
+        <%= link_to "PURCHASE GIFT VOUCHER", "#", class: "nav-link btn waterlily-btn" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "CONTACT US", "#", class: "nav-link btn waterlily-secondary-btn" %>
       </li>
     </ul>
   </div>
