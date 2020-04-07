@@ -1,8 +1,25 @@
+
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand navbar-expand" href="#">
+    <div class="com-links d-flex">
+        <li class="nav-item-com">
+          <%= link_to "tel:01603613506" do %>
+          <strong><i class="fas fa-phone"></i></strong> <span class="d-none d-sm-inline">(01603) 613 506</span>
+          <% end %>
+        </li>
+        <li class="nav-item-com">
+          <%= mail_to "indulge@water-lily.co.uk" do %>
+          <strong><i class="far fa-envelope"></i></strong> <span class="d-none d-sm-inline">indulge@water-lily.co.uk</span>
+          <% end %>
+        </li>
+    </div>
+  </a>
+</nav>
+
 <div class="navbar navbar-expand-sm navbar-dark bg-dark navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= image_tag "https://res.cloudinary.com/dqlvehu5z/image/upload/v1586180073/waterlily/WATERLILY_logo_No_BG_OL_copy_uaqkxk.png" %>
   <% end %>
-
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

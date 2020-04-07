@@ -2,10 +2,17 @@
   background: #AFB889;
   border-radius: 5px;
   color: white!important;
+  &:hover{
+    background: #9ea970;
+  }
 }
 
 .waterlily-secondary-btn {
   border-radius: 5px;
-  border: 2px solid #AFB889;
+  border: 2px solid #EDF6C5;
   color: #AFB889;
+  &:hover{
+    color: white;
+    border: 2px solid white;
+  }
 }
