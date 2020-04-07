@@ -1,0 +1,20 @@
+.footer {
+  height: 300px;
+  background: #343a40;
+  flex-shrink: 0;
+  color: #EDF6C5;
+}
+
+.footer-logo img{
+  width: 300px;
+}
+
+.social-media a{
+  font-size: 38px;
+  text-decoration: none;
+  color: #9ea970;
+  margin: 10px;
+  &:hover {
+    color: #EDF6C5;
+  }
+}
