@@ -1,2 +1,3 @@
 class TreatmentsController < ApplicationController
+  
 end
