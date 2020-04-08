@@ -25,7 +25,8 @@ gem 'jbuilder', '~> 2.5'
 gem "webpacker", "~> 3.0"
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
-
+gem 'active_storage_validations'
+gem 'simple_form'
 
 
 # Use Redis adapter to run Action Cable in production

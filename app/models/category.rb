@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-  has_many :treatments
-  has_many :subcategories
+  has_many :subcategories, dependent: :destroy
+  has_one_attached :photo
 end
