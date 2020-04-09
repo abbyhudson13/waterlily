@@ -4,8 +4,39 @@
   background-size: cover;
   background-position: center;
   height: 500px;
-    h1{
+    h1, h4 {
       color: white;
-      margin-right: 10%;
     }
+}
+
+.homepage-header{
+    margin-right: 6%;
+}
+
+.section-title {
+  padding-top: 40px;
+}
+
+hr{
+  width: 30%;
+}
+
+.home-categories h2{
+  color: #343a40;
+}
+.about-us{
+  background-color: #E4EBC7;
+  text-align: center;
+  color: #343a40;
+}
+
+#shop-photo {
+  width: 40%;
+}
+.about-text{
+  background-color: white;
+  p{
+    margin: 0px;
+    padding: 15px;
+  }
 }
