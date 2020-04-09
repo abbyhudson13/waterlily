@@ -1,5 +1,38 @@
 <body>
   <div id="banner" class="d-flex flex-column align-items-end justify-content-center">
-    <h1>Welcome to Waterlily</h1>
+    <div class="homepage-header">
+      <h1>Welcome to Waterlily</h1>
+      <h4>Tanning and Beauty Salon in the Heart of Norwich</h4>
+    </div>
+  </div>
+  <div class="home-categories text-center">
+    <h2 class="section-title">OUR SERVICES</h2>
+    <hr/>
+    <div class="row justify-content-center">
+      <% @categories.each do |category|%>
+      <div class="wl-card m-3">
+        <div class="card-content d-flex flex-column text-center">
+          <% if category.photo.attached?%>
+          <%= cl_image_tag category.photo.key, width: 300, height: 200, class: "card-photo"%>
+          <% end %>
+          <div class="pt-2 pb-2">
+            <%= category.name %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="about-us d-flex flex-column align-items-center mt-20">
+    <h2 class="section-title">ABOUT US</h2>
+    <hr/>
+    <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586446047/waterlily/12795009_1055610467793081_305965606528968728_o_ubf4rt.jpg",
+      class: "col-lg-6 col-md-8 col-sm-11", crop: :fill) %>
+    <hr/>
+    <div class="about-text text-center col-lg-8 col-md-8 col-sm-10">
+      <p>We have been based in Timberhill in the heart of Norwich for over 15 years. We offer a range of treatments for customers, including Vertical Tanning, Manicures, Pedicures, Waxing, Facials and Massage. </p>
+      <p class="pt-0">You can relax from head to toe in our friendly, welcoming salon and leave feeling rejuvinated. You'll be glad you stopped by!</p>
+    </div>
+    <hr/>
   </div>
 </body>
