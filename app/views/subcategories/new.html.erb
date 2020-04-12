@@ -1,11 +1,16 @@
-<div class="h-100 d-flex flex-column align-items-center">
-  <div class="p-10">
-    <h2 class="text-center mt-10">Create a new subcategory</h2>
-    <%= simple_form_for [@subcategory], html: { class: ""}   do |f| %>
-    <div class="d-flex flex-column align-items-center">
-      <%= f.input :category_id,
-      collection: Category.all%>
-      <%= f.submit "Submit", class: "navbar-button" %>
-      <% end %>
+<div class="container wl-new">
+  <div class="d-flex flex-column align-items-center">
+    <div class="p-10">
+      <h2 class="text-center">Create a new subcategory</h2>
+      <%= simple_form_for [@subcategory], html: { class: "wl_form"}   do |f| %>
+      <div class="d-flex flex-column align-items-center">
+        <%= f.input :name %>
+        <%= f.input :category_id,
+        collection: Category.all%>
+        <%= f.input :description %>
+        <%= f.submit "Submit", class: "navbar-button" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

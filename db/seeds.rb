@@ -75,8 +75,8 @@ bodycontour.photo.attach(io:file5, filename:'bodycontour.jpg', content_type: 'im
 
 file7 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586340050/waterlily/botox.jpg')
 cosmeticcenters = Category.create(
-  name: "National Cosmetic Clinic",
-  description: "At National Cosmetic Clinics we understand the importance of looking good and feeling confident and for over 25 years we have provided thousands of men and women with an alternative to surgery, earning a strong reputation within the cosmetic industry. Please contact us for a consultation."
+  name: "Cosmetic Treatments",
+  description: "We offer a wide range of non-surgical cosmetic treatments, aimed to help you feel more confident. Please contact us for a consultation."
 )
 
 cosmeticcenters.photo.attach(io:file7, filename:'cosmetic.jpg', content_type: 'image/jpg')

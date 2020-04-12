@@ -1,5 +1,6 @@
 class SubcategoriesController < ApplicationController
   def new
+    @categories = Category.all
     @subcategory = Subcategory.new
   end
 
@@ -14,5 +15,5 @@ class SubcategoriesController < ApplicationController
 end
 
 def subcategory_params
-  params.require(:subcategory, :name, :category_id).permit(:description)
+  params.require(:subcategory).permit(:description, :name, :category_id)
 end
