@@ -1,5 +1,4 @@
 .show-header {
-  margin-top: 50px;
   margin-bottom: 20px;
   color: $wl-grey;
 }
@@ -9,5 +8,22 @@
 
 .show-description {
   text-align: center;
+}
 
+.show-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 5px;
+  background-color: white;
+  img {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  hr {
+    margin: 15px;
+  }
 }
