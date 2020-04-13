@@ -81,3 +81,14 @@ cosmeticcenters = Category.create(
 
 cosmeticcenters.photo.attach(io:file7, filename:'cosmetic.jpg', content_type: 'image/jpg')
 puts "completed categories"
+
+#Subcategories
+Subcategory.destroy_all
+#thaimassage
+thaimassage = Subcategory.create(
+  name: "Thai Massage",
+  description: "Thai Massage with Onsri",
+  category_id: Category.find_by_name("Massage").id
+)
+
+puts "Completed subcategory"
