@@ -4,6 +4,7 @@
   color: #343a40;
   &:hover {
     color: #A8A8A8;
+    transition: 0.4s;
   }
 }
  a {
@@ -16,11 +17,11 @@
 .wl-card {
   &:hover {
     filter: grayscale(50%);
+    transition: 0.4s;
   }
 }
 
 .card-photo {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-
 }
