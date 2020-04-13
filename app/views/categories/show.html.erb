@@ -1,1 +1,8 @@
-<p>show page</p>
+<div class="container d-flex flex-column align-items-center wl-show">
+  <h1 class="show-header"><%= @category.name %></h1>
+  <%= cl_image_tag @category.photo.key, width: 300, height: 200, class: ""%>
+  <hr/>
+  <div class="show-description col-xl-8 col-md-8 col-sm-10">
+    <%= @category.description %>
+  </div>
+</div>
