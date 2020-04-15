@@ -91,6 +91,14 @@ thaimassage = Subcategory.create(
   category_id: Category.find_by_name("Massage").id
 )
 
+thai30min = Treatment.create(
+  title: "30 Minute Thai Massage",
+  time: 30,
+  special_offer: false,
+  subcategory_id: Subcategory.find_by_name("Thai Massage").id,
+  standard_price_cents: 3000
+)
+
 #swedish massage
 swedish = Subcategory.create(
   name: "Swedish",
@@ -165,7 +173,7 @@ packages2 = Subcategory.create(
 packages2 = Subcategory.create(
   name: "Facials",
   description: "Leave your skin feeling smooth and fresh",
-  category_id: Category.find_by_name("Hands, Feet & Nails").id
+  category_id: Category.find_by_name("Facials").id
 )
 
 #facewaxing
@@ -207,7 +215,7 @@ xfit = Subcategory.create(
 tintingperming = Subcategory.create(
   name: "Tinting & Perming",
   description: "Please note that a patch test is required at least 24 hours prior to tinting and perming",
-  category_id: Category.find_by_name("Body Contour").id
+  category_id: Category.find_by_name("Tinting & Perming").id
 )
 
 #cosmetic

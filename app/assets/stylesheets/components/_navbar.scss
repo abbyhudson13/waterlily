@@ -32,3 +32,7 @@
     color: #8f99a3;
   }
 }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: $wl-khaki;
+  }
