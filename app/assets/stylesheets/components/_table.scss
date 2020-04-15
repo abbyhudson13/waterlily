@@ -1,0 +1,16 @@
+.wl-table {
+  margin-top: 25px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  thead {
+  background-color: $wl-khaki;
+  color: white;
+  }
+  th{
+    font-weight: normal;
+    padding: 10px;
+  }
+  td{
+    padding: 15px;
+    background-color: white;
+  }
+}
