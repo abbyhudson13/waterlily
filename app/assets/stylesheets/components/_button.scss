@@ -16,3 +16,13 @@
     border: 2px solid white;
   }
 }
+
+.waterlily-pill-btn {
+  margin-top: 20px;
+  background: $wl-grey;
+  border-radius: 5px;
+  color: white!important;
+  &:hover{
+    background: #4b555e;
+  }
+}
