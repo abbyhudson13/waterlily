@@ -57,7 +57,7 @@ facials.photo.attach(io:file4, filename:'facials.jpg', content_type: 'image/jpg'
 file6 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586339320/waterlily/eyebrow.jpg')
 tintingperming = Category.create(
   name: "Tinting & Perming",
-  description: "Make your eyes stand out with our range of tinting and perming for eyelashes and eyebrows."
+  description: "Make your eyes stand out with our range of tinting and perming for eyelashes and eyebrows. Please note that a patch test is required at least 24 hours prior to tinting and perming"
 )
 
 tintingperming.photo.attach(io:file6, filename:'tintingperming.jpg', content_type: 'image/jpg')
@@ -144,7 +144,7 @@ deeptissuethirty = Treatment.create(
   title: "30 Minute Deep Tissue Massage",
   time: 30,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Thai Massage").id,
+  subcategory_id: Subcategory.find_by_name("Deep Tissue Massage").id,
   standard_price_cents: 3000
 )
 
@@ -152,7 +152,7 @@ deeptissuesixty = Treatment.create(
   title: "60 Minute Deep Tissue Massage",
   time: 60,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Thai Massage").id,
+  subcategory_id: Subcategory.find_by_name("Deep Tissue Massage").id,
   standard_price_cents: 4000
 )
 
@@ -160,7 +160,7 @@ deeptissueninety = Treatment.create(
   title: "90 Minute Deep Tissue Massage",
   time: 90,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Thai Massage").id,
+  subcategory_id: Subcategory.find_by_name("Deep Tissue Massage").id,
   standard_price_cents: 5500
 )
 
@@ -202,6 +202,22 @@ aromatherapy = Subcategory.create(
   category_id: Category.find_by_name("Massage").id
 )
 
+aromatherapybackneckshoulder = Treatment.create(
+  title: "Aromatherapy Back, Neck and Shoulder Massage",
+  time: 45,
+  special_offer: false,
+  subcategory_id: Subcategory.find_by_name("Aromatherapy").id,
+  standard_price_cents: 3700
+)
+
+aromatherapyfullbody = Treatment.create(
+  title: "Aromatherapy Full Body Massage",
+  time: 60,
+  special_offer: false,
+  subcategory_id: Subcategory.find_by_name("Aromatherapy").id,
+  standard_price_cents: 4200
+)
+
 #hotstone massage
 hotstone = Subcategory.create(
   name: "Hot Stone",
@@ -238,7 +254,7 @@ fullbodyscrub = Treatment.create(
   title: "Full Body Scrub",
   time: 60,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Thai Massage").id,
+  subcategory_id: Subcategory.find_by_name("Body Exfoliation").id,
   standard_price_cents: 3000
 )
 
@@ -290,7 +306,7 @@ deepbodytreatment = Treatment.create(
   standard_price_cents: 6500
 )
 mensonly = Treatment.create(
-  title: "MOT- Male only Treatment",
+  title: "MOT- Male Only Treatment",
   description: "An intensive treatment using specialized products, incorporates a mini facial, hand and nail treatment and back/shouler massage.",
   time: 75,
   special_offer: false,
@@ -410,7 +426,7 @@ shellaccolour = Treatment.create(
   description: "Fingers or toes.",
   time: 60,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Manicures").id,
+  subcategory_id: Subcategory.find_by_name("Shellac/ Gellux Overlays").id,
   standard_price_cents: 2800
 )
 
@@ -419,16 +435,16 @@ shellacfrench = Treatment.create(
   description: "Fingers or toes.",
   time: 60,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Manicures").id,
+  subcategory_id: Subcategory.find_by_name("Shellac/ Gellux Overlays").id,
   standard_price_cents: 3000
 )
 
 shellacsoakoff = Treatment.create(
-  title: "Gel Soak off and mini manicure/ pedicure ",
+  title: "Gel Soak off and Mini Manicure/ Pedicure ",
   description: "No polish.",
   time: 90,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Manicures").id,
+  subcategory_id: Subcategory.find_by_name("Shellac/ Gellux Overlays").id,
   standard_price_cents: 2000
 )
 
@@ -444,7 +460,7 @@ filepolish = Treatment.create(
   description: "",
   time: 30,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Manicures").id,
+  subcategory_id: Subcategory.find_by_name("Pedicures").id,
   standard_price_cents: 2000
 )
 
@@ -593,7 +609,7 @@ relaxationpackage2 = Treatment.create(
 
 mensonly3 = Treatment.create(
   title: "MOT- Male only Treatment",
-  description: "An intensive treatment using specialized products, incorporates a mini facial, hand and nail treatment and back/shouler massage.",
+  description: "An intensive treatment using specialized products, incorporates a mini facial, hand and nail treatment and back/shoulder massage.",
   time: 75,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Packages with Facials").id,
@@ -608,7 +624,6 @@ face = Subcategory.create(
 )
 eyebrowwax = Treatment.create(
   title: "Eyebrow Wax/ Thread",
-  description: "",
   time: 15,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Face Waxing").id,
@@ -617,7 +632,6 @@ eyebrowwax = Treatment.create(
 
 eyebrowreshape = Treatment.create(
   title: "Eyebrow Reshape Wax/ Thread",
-  description: "",
   time: 20,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Face Waxing").id,
@@ -636,7 +650,6 @@ menseyebrow = Treatment.create(
 
 upperliporchin = Treatment.create(
   title: "Upper Lip or Chin Wax/Thread",
-  description: "",
   time: 15,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Face Waxing").id,
@@ -645,7 +658,6 @@ upperliporchin = Treatment.create(
 
 upperlipandchin = Treatment.create(
   title: "Upper Lip and Chin Wax/Thread",
-  description: "",
   time: 30,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Face Waxing").id,
@@ -662,7 +674,6 @@ body = Subcategory.create(
 )
 underarm = Treatment.create(
   title: "Under arm Wax",
-  description: "",
   time: 30,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Body Waxing").id,
@@ -671,7 +682,6 @@ underarm = Treatment.create(
 
 basicbikini = Treatment.create(
   title: "Basic Bikini Wax",
-  description: "",
   time: 20,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Body Waxing").id,
@@ -680,7 +690,6 @@ basicbikini = Treatment.create(
 
 hilegbikini = Treatment.create(
   title: "High Leg Bikini Wax",
-  description: "",
   time: 30,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Body Waxing").id,
@@ -689,7 +698,6 @@ hilegbikini = Treatment.create(
 
 halfleg = Treatment.create(
   title: "Half Leg Wax",
-  description: "",
   time: 30,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Body Waxing").id,
@@ -698,7 +706,6 @@ halfleg = Treatment.create(
 
 threequarterleg = Treatment.create(
   title: "Three quarter Leg Wax",
-  description: "",
   time: 45,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Body Waxing").id,
@@ -707,7 +714,6 @@ threequarterleg = Treatment.create(
 
 fullleg = Treatment.create(
   title: "Full Leg Wax",
-  description: "",
   time: 60,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Body Waxing").id,
@@ -716,7 +722,6 @@ fullleg = Treatment.create(
 
 fulllegbasicbikini = Treatment.create(
   title: "Full Leg and Basic Bikini Wax",
-  description: "",
   time: 80,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Body Waxing").id,
@@ -725,7 +730,6 @@ fulllegbasicbikini = Treatment.create(
 
 fulllegbasicbikini = Treatment.create(
   title: "Full Leg and High Leg Bikini Wax",
-  description: "",
   time: 90,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Body Waxing").id,
@@ -750,6 +754,7 @@ arasys = Subcategory.create(
 singlesessionarasys= Treatment.create(
   title: "Arasys- Single Session",
   time: 17,
+  description: "Each 17 minute session is equivalent to 250 sit-ups or 300 buttock raises. Widely known as the best faradic system",
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Arasys").id,
   standard_price_cents: 2000
@@ -757,6 +762,7 @@ singlesessionarasys= Treatment.create(
 coursearasys= Treatment.create(
   title: "Arasys- Course of 10",
   time: 1700,
+  description: "Each 17 minute session is equivalent to 250 sit-ups or 300 buttock raises. Widely known as the best faradic system",
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Arasys").id,
   standard_price_cents: 15000
@@ -774,6 +780,7 @@ xfit = Subcategory.create(
 singlesessionxfit= Treatment.create(
   title: "X-Fit- 10 Minute Session",
   time: 10,
+  description: "10 minute session burns fat, helps you lose weight, reduces cellulite, increases circulation and builds muscle tone.",
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("X-Fit Vibration Plate").id,
   standard_price_cents: 400
@@ -782,6 +789,7 @@ singlesessionxfit= Treatment.create(
 tencoursexfit= Treatment.create(
   title: "X-Fit- Course of 10",
   time: 1000,
+  description: "10 minute session burns fat, helps you lose weight, reduces cellulite, increases circulation and builds muscle tone.",
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("X-Fit Vibration Plate").id,
   standard_price_cents: 3500
@@ -789,6 +797,7 @@ tencoursexfit= Treatment.create(
 twentycoursexfit= Treatment.create(
   title: "X-Fit- Course of 20",
   time: 2000,
+  description: "10 minute session burns fat, helps you lose weight, reduces cellulite, increases circulation and builds muscle tone.",
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("X-Fit Vibration Plate").id,
   standard_price_cents: 3500
