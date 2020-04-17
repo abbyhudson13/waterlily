@@ -299,7 +299,7 @@ relaxationpackage = Treatment.create(
 
 deepbodytreatment = Treatment.create(
   title: "Deep Body Treatment Package",
-  description: "Full Body Scrub & Full Body Aromatherapy massage",
+  description: "Full Body Scrub & Full Body Aromatherapy Massage",
   time: 120,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Massage Packages").id,
@@ -307,7 +307,7 @@ deepbodytreatment = Treatment.create(
 )
 mensonly = Treatment.create(
   title: "MOT- Male Only Treatment",
-  description: "An intensive treatment using specialized products, incorporates a mini facial, hand and nail treatment and back/shouler massage.",
+  description: "An intensive treatment using specialized products, incorporates a mini facial, hand and nail treatment and back/shoulder massage.",
   time: 75,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Massage Packages").id,
@@ -369,8 +369,7 @@ manicures = Subcategory.create(
 )
 
 quickfix = Treatment.create(
-  title: "Quick Fix",
-  description: "File and Polish- Hands",
+  title: "Quick Fix- File & Polish (Hands)",
   time: 30,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Manicures").id,
@@ -456,8 +455,7 @@ pedicures = Subcategory.create(
   category_id: Category.find_by_name("Hands, Feet & Nails").id
 )
 filepolish = Treatment.create(
-  title: "File & Polish - Feet",
-  description: "",
+  title: "Quick Fix File & Polish (Feet)",
   time: 30,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Pedicures").id,
@@ -474,7 +472,7 @@ minipedicure = Treatment.create(
 )
 
 standardpedicure = Treatment.create(
-  title: "Mini Pedicure",
+  title: "Standard Pedicure",
   description: "Soak, file, cuticle tidy, foot massage and polish.",
   time: 60,
   special_offer: false,
@@ -641,6 +639,7 @@ eyebrowreshape = Treatment.create(
 menseyebrow = Treatment.create(
   title: "Mens Eyebrow Wax",
   description: "Starting from price given",
+  variable_price: true,
   time: 10,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Face Waxing").id,
@@ -736,10 +735,10 @@ fulllegbasicbikini = Treatment.create(
   standard_price_cents: 4000
 )
 
-menseyebrow = Treatment.create(
+menschest = Treatment.create(
   title: "Mens Chest or Bax Wax",
-  description: "Starting from price given",
   time: 30,
+  variable_price: true,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Body Waxing").id,
   standard_price_cents: 2500
