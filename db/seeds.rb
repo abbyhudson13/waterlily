@@ -144,7 +144,7 @@ deeptissuethirty = Treatment.create(
   title: "30 Minute Deep Tissue Massage",
   time: 30,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Thai Massage").id,
+  subcategory_id: Subcategory.find_by_name("Deep Tissue Massage").id,
   standard_price_cents: 3000
 )
 
@@ -152,7 +152,7 @@ deeptissuesixty = Treatment.create(
   title: "60 Minute Deep Tissue Massage",
   time: 60,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Thai Massage").id,
+  subcategory_id: Subcategory.find_by_name("Deep Tissue Massage").id,
   standard_price_cents: 4000
 )
 
@@ -160,7 +160,7 @@ deeptissueninety = Treatment.create(
   title: "90 Minute Deep Tissue Massage",
   time: 90,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Thai Massage").id,
+  subcategory_id: Subcategory.find_by_name("Deep Tissue Massage").id,
   standard_price_cents: 5500
 )
 
@@ -202,6 +202,22 @@ aromatherapy = Subcategory.create(
   category_id: Category.find_by_name("Massage").id
 )
 
+aromatherapybackneckshoulder = Treatment.create(
+  title: "Aromatherapy Back, Neck and Shoulder Massage",
+  time: 45,
+  special_offer: false,
+  subcategory_id: Subcategory.find_by_name("Aromatherapy").id,
+  standard_price_cents: 3700
+)
+
+aromatherapyfullbody = Treatment.create(
+  title: "Aromatherapy Full Body Massage",
+  time: 60,
+  special_offer: false,
+  subcategory_id: Subcategory.find_by_name("Aromatherapy").id,
+  standard_price_cents: 4200
+)
+
 #hotstone massage
 hotstone = Subcategory.create(
   name: "Hot Stone",
@@ -238,7 +254,7 @@ fullbodyscrub = Treatment.create(
   title: "Full Body Scrub",
   time: 60,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Thai Massage").id,
+  subcategory_id: Subcategory.find_by_name("Body Exfoliation").id,
   standard_price_cents: 3000
 )
 
@@ -410,7 +426,7 @@ shellaccolour = Treatment.create(
   description: "Fingers or toes.",
   time: 60,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Manicures").id,
+  subcategory_id: Subcategory.find_by_name("Shellac/ Gellux Overlays").id,
   standard_price_cents: 2800
 )
 
@@ -419,7 +435,7 @@ shellacfrench = Treatment.create(
   description: "Fingers or toes.",
   time: 60,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Manicures").id,
+  subcategory_id: Subcategory.find_by_name("Shellac/ Gellux Overlays").id,
   standard_price_cents: 3000
 )
 
@@ -428,7 +444,7 @@ shellacsoakoff = Treatment.create(
   description: "No polish.",
   time: 90,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Manicures").id,
+  subcategory_id: Subcategory.find_by_name("Shellac/ Gellux Overlays").id,
   standard_price_cents: 2000
 )
 
@@ -444,7 +460,7 @@ filepolish = Treatment.create(
   description: "",
   time: 30,
   special_offer: false,
-  subcategory_id: Subcategory.find_by_name("Manicures").id,
+  subcategory_id: Subcategory.find_by_name("Pedicures").id,
   standard_price_cents: 2000
 )
 
