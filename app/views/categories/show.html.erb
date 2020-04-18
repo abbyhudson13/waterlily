@@ -7,7 +7,7 @@
       <%= @category.description %>
     </div>
   </div>
-  <ul class="nav nav-pills mt-30" id="pills-tab" role="tablist">
+  <ul class="nav nav-pills mt-30 justify-content-center" id="pills-tab" role="tablist">
     <li class="nav-item">
       <a class="nav-link waterlily-pill-btn mr-3 active" id="pills-all-tab" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="false">All Treatments</a>
     </li>
@@ -21,7 +21,7 @@
   </ul>
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
-      <table class="wl-table">
+      <table class="table wl-table">
         <thead>
           <th>Treatment</th>
           <th>Duration</th>
@@ -58,7 +58,11 @@
             <td><%= treatment.title%></td>
             <% end %>
             <td class="time-td"><%= treatment.time%> minutes</td>
-            <td>£<%= treatment.standard_price%></td>
+            <% if !treatment.variable_price == nil? && treatment.variable_price == true %>
+              <td>from £<%= treatment.standard_price%></td>
+            <%else%>
+              <td>£<%= treatment.standard_price%></td>
+            <%end%>
           </tr>
           <% end %>
         </tbody>
@@ -67,7 +71,7 @@
     <% if @category.subcategories.length > 1 %>
     <% @category.subcategories.each do |subcategory| %>
     <div class="tab-pane fade show" id="pills-<%=subcategory.id %>" role="tabpanel" aria-labelledby="pills-<%=subcategory.id%>-tab">
-      <table class="wl-table">
+      <table class="wl-table table">
         <thead>
           <th>Treatment</th>
           <th>Duration</th>

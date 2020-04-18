@@ -369,7 +369,7 @@ manicures = Subcategory.create(
 )
 
 quickfix = Treatment.create(
-  title: "Quick Fix- File & Polish (Hands)",
+  title: "Quick Fix- File & Polish - Fingers",
   time: 30,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Manicures").id,
@@ -455,7 +455,7 @@ pedicures = Subcategory.create(
   category_id: Category.find_by_name("Hands, Feet & Nails").id
 )
 filepolish = Treatment.create(
-  title: "Quick Fix File & Polish (Feet)",
+  title: "Quick Fix File & Polish- Toes",
   time: 30,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Pedicures").id,
