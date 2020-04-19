@@ -30,3 +30,12 @@ body {
 }
 
 @import "datatables";
+
+a.page-link {
+  text-decoration: none;
+  color: $wl-grey;
+  &:hover{
+    text-decoration: none;
+    color: $wl-darkgreen;
+  }
+}

@@ -16,8 +16,12 @@
 //= require turbolinks
 //= require datatables
 //= require_tree .
+//= require jquery.turbolinks
 
 
-$(document).ready(function() {
-  $("#dttb").dataTable();
-});
+$(document).on('turbolinks:load', function() {
+    $('#dttb').DataTable({
+      "autoWidth": false,
+      "ordering": false
+    });
+} );
