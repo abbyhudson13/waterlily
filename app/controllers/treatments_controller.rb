@@ -1,4 +1,10 @@
 class TreatmentsController < ApplicationController
+
+  def index
+    @treatments = Treatment.all
+    @categories = Category.all
+  end
+
   def new
     @subcategories = subcategories.all
     @treatment = Treatment.new
