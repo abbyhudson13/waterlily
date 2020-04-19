@@ -35,4 +35,9 @@
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     background-color: $wl-khaki;
-  }
+}
+
+.dropdown-item:active {
+  background-color: $wl-khaki;
+  text-decoration: none;
+}
