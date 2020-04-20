@@ -1,8 +1,18 @@
 class TreatmentsController < ApplicationController
 
   def index
-    @treatments = Treatment.all
     @categories = Category.all
+    if params[:query].present?
+      if params[:query].present?
+  sql_query = " \
+    treatments.title ILIKE :query \
+    OR subcategories.name ILIKE :query \
+  "
+  @treatments = Treatment.joins(:subcategory).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @treatments = Treatment.all
+    end
+  end
   end
 
   def new
