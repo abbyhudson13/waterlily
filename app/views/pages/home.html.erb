@@ -3,6 +3,18 @@
     <div class="homepage-header">
       <h1>Welcome to Waterlily</h1>
       <h4>Tanning and Beauty Salon in the Heart of Norwich</h4>
+      <div class="">
+        <%= form_tag treatments_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a treatment"
+            %>
+          <%= submit_tag "Search", class: "btn waterlily-btn" %>
+        <% end %>
+
+      </div>
+
     </div>
   </div>
   <div class="home-categories text-center">
