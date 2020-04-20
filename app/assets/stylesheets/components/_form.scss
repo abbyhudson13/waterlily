@@ -7,3 +7,25 @@
     margin-top: 20px;
   }
 }
+
+.search-form {
+  height: 38px;
+  border-radius: 5px;
+  margin-left: 15px;
+  width: 300px;
+
+}
+
+.search-form-all {
+  height: 38px;
+}
+
+input:focus {
+    outline: none !important;
+    border-color: $wl-khaki;
+
+}
+textarea:focus {
+    outline: none !important;
+    border-color: $wl-khaki;
+}
