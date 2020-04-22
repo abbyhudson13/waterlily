@@ -198,7 +198,7 @@ swedishfullbody = Treatment.create(
 #aromatherapy massage
 aromatherapy = Subcategory.create(
   name: "Aromatherapy",
-  description: "Relaxation Massage",
+  description: "Relaxation Massage using essential oils",
   category_id: Category.find_by_name("Massage").id
 )
 
@@ -261,7 +261,7 @@ fullbodyscrub = Treatment.create(
 #prenatal massage
 prenatal = Subcategory.create(
   name: "Prenatal Massage",
-  description: "A massage designed especially for expectant motherd",
+  description: "A massage designed especially for pregnancy",
   category_id: Category.find_by_name("Massage").id
 )
 
@@ -307,7 +307,7 @@ deepbodytreatment = Treatment.create(
 )
 mensonly = Treatment.create(
   title: "MOT- Male Only Treatment",
-  description: "An intensive treatment using specialized products, incorporates a mini facial, hand and nail treatment and back/shoulder massage.",
+  description: "An intensive treatment for men using specialized products, incorporates a mini facial, hand and nail treatment and back/shoulder massage.",
   time: 75,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Massage Packages").id,
@@ -318,7 +318,7 @@ mensonly = Treatment.create(
 #tanning
 verticaltanning = Subcategory.create(
   name: "Vertical Tanning",
-  description: "We pride ourselves on our professional advice and guidance when using tanning equipment. To maintain a healthy tan, usually 1-2 sessions are suffice.",
+  description: "We pride ourselves on our professional advice and guidance when using the tanning sunbeds. To maintain a healthy tan using a sunbed, usually 1-2 sessions are suffice.",
   category_id: Category.find_by_name("Tanning").id
 )
 singlesessiontanning= Treatment.create(
@@ -364,7 +364,7 @@ onetwentytanning= Treatment.create(
 #manicures
 manicures = Subcategory.create(
   name: "Manicures",
-  description: "Look after your hands",
+  description: "Look after your hands and nails",
   category_id: Category.find_by_name("Hands, Feet & Nails").id
 )
 
@@ -416,7 +416,7 @@ menshandgroom = Treatment.create(
 #shellac
 shellac = Subcategory.create(
   name: "Shellac/ Gellux Overlays",
-  description: "On like a polish, wears like a gel",
+  description: "On like a polish, wears like a gel. For your finger or toe nails",
   category_id: Category.find_by_name("Hands, Feet & Nails").id
 )
 
@@ -451,7 +451,7 @@ shellacsoakoff = Treatment.create(
 #pedicures
 pedicures = Subcategory.create(
   name: "Pedicures",
-  description: "Give your feet the care they deserve",
+  description: "Give your feet and toe nails the care they deserve",
   category_id: Category.find_by_name("Hands, Feet & Nails").id
 )
 filepolish = Treatment.create(
@@ -524,7 +524,7 @@ luxurypamperpackage = Treatment.create(
 )
 mensonly2 = Treatment.create(
   title: "MOT- Male only Treatment",
-  description: "An intensive treatment using specialized products, incorporates a mini facial, hand and nail treatment and back/shouler massage.",
+  description: "An intensive treatment for men using specialized products, incorporates a mini facial, hand and nail treatment and back/shouler massage.",
   time: 75,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Manicure & Pedicure Packages").id,
@@ -607,7 +607,7 @@ relaxationpackage2 = Treatment.create(
 
 mensonly3 = Treatment.create(
   title: "MOT- Male only Treatment",
-  description: "An intensive treatment using specialized products, incorporates a mini facial, hand and nail treatment and back/shoulder massage.",
+  description: "An intensive treatment for men using specialized products, incorporates a mini facial, hand and nail treatment and back/shoulder massage.",
   time: 75,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Packages with Facials").id,
@@ -668,7 +668,7 @@ upperlipandchin = Treatment.create(
 #bodywaxing
 body = Subcategory.create(
   name: "Body Waxing",
-  description: "Using a gentle creme for sensitive skin",
+  description: "Hair removal using a gentle creme for sensitive skin",
   category_id: Category.find_by_name("Waxing").id
 )
 underarm = Treatment.create(
@@ -772,7 +772,7 @@ coursearasys= Treatment.create(
 #xfit
 xfit = Subcategory.create(
   name: "X-Fit Vibration Plate",
-  description: "10 minute session burns fat, helps you lose weight, reduces cellulite, increases circulation and builds muscle tone.",
+  description: "10 minutes on the X Fit burns fat, helps you lose weight, reduces cellulite, increases circulation and builds muscle tone.",
   category_id: Category.find_by_name("Body Contour").id
 )
 
@@ -826,7 +826,7 @@ eyebrowtint = Treatment.create(
 )
 
 lasheyebrowtint = Treatment.create(
-  title: "Lash and Brow Tint",
+  title: "Eyelash and Eyebrow Tint",
   time: 40,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Tinting & Perming").id,
