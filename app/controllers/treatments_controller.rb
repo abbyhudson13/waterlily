@@ -6,6 +6,8 @@ class TreatmentsController < ApplicationController
       sql_query = " \
       treatments.title ILIKE :query \
       OR subcategories.name ILIKE :query \
+      OR subcategories.description ILIKE :query \
+      OR treatments.description ILIKE :query \
       "
       @treatments = Treatment.joins(:subcategory).where(sql_query, query: "%#{params[:query]}%")
     else
