@@ -5,8 +5,10 @@ ruby '2.6.5'
 gem 'jquery-turbolinks'
 gem 'jquery-datatables'
 gem 'money-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -29,6 +31,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 gem 'active_storage_validations'
 gem 'simple_form'
+gem 'mailgun-ruby', '~>1.1.6'
 
 
 # Use Redis adapter to run Action Cable in production
