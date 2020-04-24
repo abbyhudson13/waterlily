@@ -4,6 +4,10 @@ class ContactsController < ApplicationController
     @categories = Category.all
   end
 
+  def index
+    @contacts = Contact.all
+  end
+
   def create
     @contact = Contact.new(params[:contact])
     @contact.request = request
