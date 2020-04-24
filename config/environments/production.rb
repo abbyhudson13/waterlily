@@ -95,8 +95,15 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 end
 
-config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-   api_key: 'ENV["mailgun_secret_api_key"]',
-   domain: 'mydomain.com',
-  }
+config.action_mailer.default_url_options = { host: 'https://your app.herokuapp.com' }
+config.action_mailer.delivery_method = :smtp
+
+ActionMailer::Base.smtp_settings = {
+:user_name => ENV['SENDGRID_USERNAME'],
+:password => ENV['SENDGRID_PASSWORD'],
+:domain => 'heroku.com',
+:address => 'smtp.sendgrid.net',
+:port => 587,
+:authentication => :plain,
+:enable_starttls_auto => true
+}
