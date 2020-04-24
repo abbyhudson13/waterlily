@@ -31,7 +31,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
 gem 'active_storage_validations'
 gem 'simple_form'
-gem 'mailgun-ruby', '~>1.1.6'
+gem 'mail_form'
 
 
 # Use Redis adapter to run Action Cable in production
