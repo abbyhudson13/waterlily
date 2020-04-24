@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'contacts/new'
-  get 'contact/new'
   resources :categories, only: [:new, :create, :index, :edit, :update, :show]
   resources :subcategories, only: [:new, :create, :index, :edit, :update]
   resources :treatments, only: [:new, :create, :index, :edit, :update]
