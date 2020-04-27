@@ -128,8 +128,9 @@ thaihead = Treatment.create(
 thaifoot = Treatment.create(
   title: "Thai Foot Massage",
   time: 30,
-  special_offer: false,
+  special_offer: true,
   subcategory_id: Subcategory.find_by_name("Thai Massage").id,
+  special_offer_price_cents: 2000,
   standard_price_cents: 2500
 )
 
@@ -292,7 +293,8 @@ relaxationpackage = Treatment.create(
   title: "Relaxation Package",
   description: "Classic Facial and Aromatherapy Full Body Massage",
   time: 120,
-  special_offer: false,
+  special_offer: true,
+  special_offer_price_cents: 4500,
   subcategory_id: Subcategory.find_by_name("Massage Packages").id,
   standard_price_cents: 6000
 )
@@ -424,13 +426,14 @@ shellaccolour = Treatment.create(
   title: "Shellac/ Gellux Colour",
   description: "Fingers or toes.",
   time: 60,
-  special_offer: false,
+  special_offer: true,
   subcategory_id: Subcategory.find_by_name("Shellac/ Gellux Overlays").id,
+  special_offer_price_cents: 2240,
   standard_price_cents: 2800
 )
 
 shellacfrench = Treatment.create(
-  title: "Shellac/ Gellux ",
+  title: "Shellac/ Gellux _ French Manicure ",
   description: "Fingers or toes.",
   time: 60,
   special_offer: false,
