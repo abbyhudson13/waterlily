@@ -8,7 +8,6 @@ class Contact < MailForm::Base
     {
       :subject => "Contact Form",
       :to => "indulge@water-lily.co.uk",
-      :from => "abbyeleanorhudson@gmail.com"
     }
   end
 end
