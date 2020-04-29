@@ -130,7 +130,7 @@ thaifoot = Treatment.create(
   time: 30,
   special_offer: true,
   subcategory_id: Subcategory.find_by_name("Thai Massage").id,
-  special_offer_price_cents: 2000,
+  offer_price_cents: 2000,
   standard_price_cents: 2500
 )
 
@@ -293,8 +293,7 @@ relaxationpackage = Treatment.create(
   title: "Relaxation Package",
   description: "Classic Facial and Aromatherapy Full Body Massage",
   time: 120,
-  special_offer: true,
-  special_offer_price_cents: 4500,
+  special_offer: false,
   subcategory_id: Subcategory.find_by_name("Massage Packages").id,
   standard_price_cents: 6000
 )
@@ -358,7 +357,8 @@ ninetytanning= Treatment.create(
 onetwentytanning= Treatment.create(
   title: "Tanning- 120 minute course",
   time: 120,
-  special_offer: false,
+  special_offer: true,
+  offer_price_cents: 4500,
   subcategory_id: Subcategory.find_by_name("Vertical Tanning").id,
   standard_price_cents: 5500
 )
@@ -428,7 +428,7 @@ shellaccolour = Treatment.create(
   time: 60,
   special_offer: true,
   subcategory_id: Subcategory.find_by_name("Shellac/ Gellux Overlays").id,
-  special_offer_price_cents: 2240,
+  offer_price_cents: 2240,
   standard_price_cents: 2800
 )
 

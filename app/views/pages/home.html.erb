@@ -5,11 +5,11 @@
       <h4>Tanning and Beauty Salon in the Heart of Norwich</h4>
       <div class="">
         <%= form_tag treatments_path, method: :get, class: "search-form-all" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "search-form",
-            placeholder: "Find a treatment"  %>
-          <%= submit_tag "Search", class: "btn waterlily-btn", id: "search-btn" %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "search-form",
+        placeholder: "Find a treatment"  %>
+        <%= submit_tag "Search", class: "btn waterlily-btn", id: "search-btn" %>
         <% end %>
       </div>
 
@@ -32,18 +32,46 @@
         </div>
       </div>
       <% end %>
-    <% end %>
+      <% end %>
     </div>
   </div>
   <div class="about-us d-flex flex-column align-items-center mt-20">
     <h2 class="section-title">ABOUT US</h2>
     <hr/>
     <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586446047/waterlily/12795009_1055610467793081_305965606528968728_o_ubf4rt.jpg",
-      class: "col-lg-6 col-md-8 col-sm-11", crop: :fill) %>
+    class: "col-lg-6 col-md-8 col-sm-11", crop: :fill) %>
     <hr/>
     <div class="about-text text-center col-lg-8 col-md-8 col-sm-10">
       <p>We have been based in Timberhill in the heart of Norwich for over 25 years. We offer a range of treatments for customers, including Vertical Tanning, Manicures, Pedicures, Waxing, Facials and Massage. </p>
       <p class="pt-0">You can relax from head to toe in our friendly, welcoming salon and leave feeling rejuvenated. You'll be glad you stopped by!</p>
+    </div>
+    <hr/>
+  </div>
+  <div class="special-offers-home d-flex flex-column align-items-center mt-20">
+    <h2 class="section-title">SPECIAL OFFERS</h2>
+    <hr/>
+    <div class="row justify-content-center">
+      <% @special_offers.each do |offer|%>
+      <div class="col-lg-3 col-sm-6 m-4">
+        <div class="card offer-card">
+          <div class="d-flex flex-column align-items-center">
+            <div class="offer-card-content">
+              <%= cl_image_tag offer.subcategory.category.photo.key, width: 300, height: 200, class: "offer-image"%>
+              <h3 class="offer-title"><%= offer.title %></h3 class="offer-title">
+              <% if (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100)  %1 == 0 %>
+              <h3><%= (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100 ).to_i %>% Off</h3>
+              <% else %>
+              <h3>Save £<%= offer.standard_price - offer.offer_price%></h3>
+              <% end %>
+              <div class="d-flex justify-content-center">
+                <p><del>£<%= offer.standard_price%></del></p>
+                <h5>£<%= offer.offer_price%></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
     <hr/>
   </div>
