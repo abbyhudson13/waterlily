@@ -34,6 +34,7 @@
       <% end %>
       <% end %>
     </div>
+    <hr/>
   </div>
   <div class="about-us d-flex flex-column align-items-center mt-20">
     <h2 class="section-title">ABOUT US</h2>
@@ -52,11 +53,9 @@
     <hr/>
     <div class="row justify-content-center">
       <% @special_offers.each do |offer|%>
-      <div class="col-lg-3 col-sm-6 m-4">
-        <div class="card offer-card">
-          <div class="d-flex flex-column align-items-center">
-            <div class="offer-card-content">
-              <%= cl_image_tag offer.subcategory.category.photo.key, width: 300, height: 200, class: "offer-image"%>
+      <div class="offer-card col">
+          <div class="d-flex card-content flex-column text-center align-items-center justify-content-center">
+              <%= cl_image_tag offer.subcategory.category.photo.key, width: 300, height: 200, :effect=>"brightness:-15", class: "offer-image"%>
               <h3 class="offer-title"><%= offer.title %></h3 class="offer-title">
               <% if (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100)  %1 == 0 %>
               <h3><%= (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100 ).to_i %>% Off</h3>
@@ -65,13 +64,16 @@
               <% end %>
               <div class="d-flex justify-content-center">
                 <p><del>£<%= offer.standard_price%></del></p>
-                <h5>£<%= offer.offer_price%></h5>
+                <h5 class="ml-1">£<%= offer.offer_price%></h5>
               </div>
-            </div>
+
           </div>
-        </div>
       </div>
       <% end %>
+    </div>
+    <div class="booking-link text-center mt-3 mb-3">
+      <p>Would you like to book?</p>
+      <%= link_to "Contact Us", contacts_new_path , class: "btn waterlily-btn mb-3" %>
     </div>
     <hr/>
   </div>
