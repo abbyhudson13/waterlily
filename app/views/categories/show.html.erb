@@ -61,7 +61,11 @@
             <% if !treatment.variable_price == nil? && treatment.variable_price == true %>
               <td>from £<%= treatment.standard_price%></td>
             <%else%>
+            <% if treatment.special_offer == true %>
+            <td><strike>£<%= treatment.standard_price%> </strike>  £<%= treatment.offer_price%> </td>
+            <% else %>
               <td>£<%= treatment.standard_price%></td>
+              <%end%>
             <%end%>
           </tr>
           <% end %>
@@ -111,7 +115,11 @@
             <% if !treatment.variable_price == nil? && treatment.variable_price == true %>
               <td>from £<%= treatment.standard_price%></td>
             <%else%>
+            <% if treatment.special_offer == true %>
+            <td><strike>£<%= treatment.standard_price%> </strike>  £<%= treatment.offer_price%> </td>
+            <% else %>
               <td>£<%= treatment.standard_price%></td>
+              <% end %>
             <%end%>
           </tr>
           <% end %>
