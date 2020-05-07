@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :treatments, only: [:new, :create, :index, :edit, :update]
   resources :contacts, only: [:new, :create]
   devise_for :users
+  resources :vouchers, only: [:show, :create]
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
