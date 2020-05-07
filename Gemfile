@@ -32,6 +32,7 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'active_storage_validations'
 gem 'simple_form'
 gem 'mail_form'
+gem 'stripe'
 
 
 # Use Redis adapter to run Action Cable in production
