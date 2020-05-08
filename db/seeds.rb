@@ -739,7 +739,7 @@ fulllegbasicbikini = Treatment.create(
 )
 
 menschest = Treatment.create(
-  title: "Mens Chest or Bax Wax",
+  title: "Mens Chest or Back Wax",
   time: 30,
   variable_price: true,
   special_offer: false,
