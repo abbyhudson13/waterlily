@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_08_082341) do
+ActiveRecord::Schema.define(version: 2020_05_08_115550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2020_05_08_082341) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "image"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -89,11 +88,14 @@ ActiveRecord::Schema.define(version: 2020_05_08_082341) do
     t.bigint "treatment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["treatment_id"], name: "index_vouchers_on_treatment_id"
+    t.index ["user_id"], name: "index_vouchers_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "subcategories", "categories"
   add_foreign_key "treatments", "categories"
   add_foreign_key "vouchers", "treatments"
+  add_foreign_key "vouchers", "users"
 end
