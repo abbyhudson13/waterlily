@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :vouchers, only: [:show, :create]
   root to: 'pages#home'
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
