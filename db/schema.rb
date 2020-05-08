@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_140802) do
+ActiveRecord::Schema.define(version: 2020_05_08_082341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_140802) do
 
   create_table "vouchers", force: :cascade do |t|
     t.string "state"
-    t.string "treatment"
+    t.string "treatment_name"
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
     t.bigint "treatment_id"
