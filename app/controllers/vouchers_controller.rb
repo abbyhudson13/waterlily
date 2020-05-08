@@ -1,7 +1,8 @@
 class VouchersController < ApplicationController
+  before_action :authenticate_user!
   def create
     treatment = Treatment.find(params[:treatment_id])
-    voucher  = Voucher.create!(treatment: treatment, treatment_name: treatment.title, amount: treatment.standard_price, state: 'pending')
+    voucher  = Voucher.create!(treatment: treatment, treatment_name: treatment.title, amount: treatment.standard_price, state: 'pending', user: current_user)
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
