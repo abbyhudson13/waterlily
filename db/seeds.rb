@@ -518,7 +518,7 @@ standardpamperpackage = Treatment.create(
 )
 
 luxurypamperpackage = Treatment.create(
-  title: "Standard Pamper Package",
+  title: "Luxury Pamper Package",
   description: "Classic Facial, Standard Manicure & Standard Pedicure",
   time: 240,
   special_offer: false,
@@ -591,7 +591,7 @@ standardpamperpackage2 = Treatment.create(
 )
 
 luxurypamperpackage2 = Treatment.create(
-  title: "Standard Pamper Package",
+  title: "Luxury Pamper Package",
   description: "Classic Facial, Standard Manicure & Standard Pedicure",
   time: 120,
   special_offer: false,
@@ -739,7 +739,7 @@ fulllegbasicbikini = Treatment.create(
 )
 
 menschest = Treatment.create(
-  title: "Mens Chest or Bax Wax",
+  title: "Mens Chest or Back Wax",
   time: 30,
   variable_price: true,
   special_offer: false,
