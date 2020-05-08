@@ -6,7 +6,6 @@ class CreateVouchers < ActiveRecord::Migration[5.2]
       t.monetize :amount, currency: { present: false }
       t.string :checkout_session_id
       t.references :treatment, foreign_key: true
-
       t.timestamps
     end
   end
