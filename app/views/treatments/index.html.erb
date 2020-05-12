@@ -36,7 +36,11 @@
           <% else %>
           <td><%= treatment.title%></td>
           <% end %>
-          <td class="time-td"><%= treatment.time%> minutes</td>
+            <% if treatment.time >1 %>
+              <td class="time-td"><%= treatment.time%> minutes</td>
+            <% else %>
+              <td class="time-td"><%= treatment.time%> minute</td>
+            <% end %>
           <% if !treatment.variable_price == nil? && treatment.variable_price == true %>
             <td>from £<%= treatment.standard_price%></td>
           <%else%>

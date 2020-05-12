@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
     if @category.save!
       redirect_to root_path
     else
-    render :new
+      render :new
     end
   end
 
