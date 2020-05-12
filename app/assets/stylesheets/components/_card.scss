@@ -16,8 +16,8 @@
 
 .wl-card {
   &:hover {
-    filter: grayscale(50%);
     transition: 0.4s;
+    transform: scale(1.03);
   }
 }
 

@@ -15,24 +15,24 @@
 
     </div>
   </div>
-  <div class="home-categories text-center">
+  <div class="home-categories text-center d-flex flex-column">
     <h2 class="section-title">OUR SERVICES</h2>
     <hr/>
-    <div class="row justify-content-center">
-      <% @categories.each do |category|%>
-      <%= link_to category_path(category) do %>
-      <div class="wl-card m-3">
-        <div class="card-content d-flex flex-column text-center">
-          <% if category.photo.attached?%>
-          <%= cl_image_tag category.photo.key, width: 300, height: 200, class: "card-photo"%>
-          <% end %>
-          <div class="pt-2 pb-2">
-            <%= category.name %>
+    <div class="row justify-content-center home-card-container">
+        <% @categories.each do |category|%>
+        <%= link_to category_path(category) do %>
+          <div class="wl-card m-3">
+            <div class="card-content d-flex flex-column text-center">
+              <% if category.photo.attached?%>
+              <%= cl_image_tag category.photo.key, width: 300, height: 200, class: "card-photo"%>
+              <% end %>
+              <div class="pt-2 pb-2">
+                <%= category.name %>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <% end %>
-      <% end %>
+        <% end %>
+        <% end %>
     </div>
     <hr/>
   </div>
