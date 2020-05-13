@@ -70,10 +70,7 @@
         </div>
         <% end %>
       </div>
-      <div class="booking-link text-center mt-3 mb-3">
-        <p>Would you like to book?</p>
-        <%= link_to "Contact Us", contacts_new_path , class: "btn waterlily-btn mb-3" %>
-      </div>
+       <%= render "./shared/booking_link" %>
       <hr/>
     </div>
   </body>
