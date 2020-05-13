@@ -1,0 +1,33 @@
+
+.opening-times{
+  background-color: white;
+}
+
+#bulletin{
+  background-color: #FFFFE0;
+  margin-top: 10px;
+  text-align: center;
+}
+
+#opening-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $wl-khaki;
+  color: white;
+  margin-top: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 56px;
+}
+.opening-times{
+  text-align: center;
+  h5{
+    text-decoration: underline;
+  }
+}
+
+.opening-time-content{
+  padding: 10px;
+  margin-bottom: 5px;
+}

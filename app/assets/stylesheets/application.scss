@@ -13,6 +13,8 @@
 @import "pages/index";
 @import "pages/home";
 @import "pages/show";
+@import "contacts/new";
+@import 'mapbox-gl/dist/mapbox-gl';
 
 html, body {
   min-height: 100vh;

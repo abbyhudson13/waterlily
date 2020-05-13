@@ -1,8 +1,8 @@
 class VouchersController < ApplicationController
   before_action :authenticate_user!, only: :create
+  before_action :set_categories
 
   def new
-    @categories = Category.all
     @voucher = Voucher.new
   end
 
@@ -26,6 +26,11 @@ class VouchersController < ApplicationController
   end
 
   def show
+  end
+
+private
+
+  def set_categories
     @categories = Category.all
   end
 end

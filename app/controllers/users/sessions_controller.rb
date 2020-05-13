@@ -2,7 +2,7 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-
+  before_action :set_categories
   # GET /resource/sign_in
   def new
     @categories = Category.all
@@ -13,6 +13,12 @@ class Users::SessionsController < Devise::SessionsController
   def create
     @categories = Category.all
     super
+  end
+
+  private
+
+  def category_params
+    params.require(:name).permit(:description, :photo)
   end
 
   # DELETE /resource/sign_out

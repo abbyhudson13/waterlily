@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
+  before_action :set_categories
   def new
     @contact = Contact.new
-    @categories = Category.all
   end
 
   def index
@@ -9,7 +9,6 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @categories = Category.all
     @contact = Contact.new(params[:contact])
     @contact.request = request
     if @contact.deliver
@@ -20,4 +19,9 @@ class ContactsController < ApplicationController
     end
   end
 
+  private
+
+  def set_categories
+    @categories = Category.all
+  end
 end
