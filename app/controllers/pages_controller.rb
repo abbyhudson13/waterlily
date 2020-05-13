@@ -1,12 +1,10 @@
 class PagesController < ApplicationController
-  def home
+before_action :set_categories, :set_offers
+  def set_categories
     @categories = Category.all
-    @special_offers = Treatment.where(special_offer: true)
   end
 
-  def offers
-    @categories = Category.all
+  def set_offers
     @special_offers = Treatment.where(special_offer: true)
   end
-
 end

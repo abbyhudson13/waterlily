@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :set_categories
   def new
     @category = Category.new
   end
@@ -13,16 +14,19 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.all
   end
 
   def show
-    @categories = Category.all
     @category = Category.find(params[:id])
   end
 
   private
+
   def category_params
     params.require(:name).permit(:description, :photo)
+  end
+
+  def set_categories
+    @categories = Category.all
   end
 end
