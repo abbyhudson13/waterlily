@@ -1,6 +1,6 @@
 class StripeCheckoutSessionService
   def call(event)
-    order = Voucher.find_by(checkout_session_id: event.data.object.id)
-    order.update(state: 'paid')
+    voucher = Voucher.find_by(checkout_session_id: event.data.object.id)
+    voucher.update(state: 'paid')
   end
 end

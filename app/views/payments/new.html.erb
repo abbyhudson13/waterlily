@@ -1,20 +1,23 @@
 <div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Voucher for <strong><%= @voucher.treatment.title %></strong> for <strong><%= humanized_money_with_symbol @voucher.amount %></strong></p>
-      <p>Message: "<%= @voucher.message %>"</p>
-      <button id="pay" class="btn btn-primary">Pay</button>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @voucher.checkout_session_id %>'
+  <div class="row py-4 d-flex justify-content-center">
+    <div class="checkout-summary d-flex flex-column align-items-center text-center">
+        <h2 class="pb-2">Checkout Summary</h2>
+        <%= cl_image_tag @voucher.treatment.subcategory.category.photo.key, width: 300, height: 200, class: "mb-3"%>
+          <p>1 x Gift Voucher for <strong><%= @voucher.treatment.title %></strong></p>
+          <p>Total: <strong><%= humanized_money_with_symbol @voucher.amount %></strong></p>
+          <p>Message: "<%= @voucher.message %>"</p>
+          <p>Delivery: E-Voucher </p>
+        <button id="pay" class="btn waterlily-btn">Proceed to Payment</button>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+          const paymentButton = document.getElementById('pay');
+          paymentButton.addEventListener('click', () => {
+            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+            stripe.redirectToCheckout({
+              sessionId: '<%= @voucher.checkout_session_id %>'
+            });
           });
-        });
-        </script
+          </script
     </div>
   </div>
 </div>
