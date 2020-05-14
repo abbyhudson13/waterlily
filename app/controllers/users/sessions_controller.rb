@@ -20,6 +20,10 @@ class Users::SessionsController < Devise::SessionsController
   def category_params
     params.require(:name).permit(:description, :photo)
   end
+  
+  def set_categories
+    @categories = Category.all
+  end
 
   # DELETE /resource/sign_out
   # def destroy

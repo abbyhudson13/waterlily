@@ -1,9 +1,13 @@
 .new-voucher{
-  background-color: white;
+  background-image: linear-gradient(-225deg, rgba(133, 108, 139, 0.3), rgba(133, 108, 139, 0.3)), url("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586253885/waterlily/zoltan-tasi-vHnVtLK8rCc-unsplash_z8gkta.jpg");
   margin: 30px;
   padding: 20px;
+  height: 600px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   border-radius: 5px;
+  background-size: cover;
+  background-position: 10% 1%;
+  color: white;
 }
 
 .voucher_message{
