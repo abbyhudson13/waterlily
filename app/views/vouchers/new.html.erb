@@ -3,12 +3,11 @@
     <div class="d-flex flex-column align-items-center">
       <div class="p-10">
         <h2 class="text-center">Buy a Gift Voucher</h2>
-        <%= simple_form_for [@voucher], html: { class: "wl_form"}   do |f| %>
+        <%= simple_form_for [@voucher], html: { class: "wl_form"} do |f| %>
         <div class="d-flex flex-column align-items-center">
           <%= f.input :treatment_id,
-          collection: Treatment.all,
-          label: false %>
-          <%= f.input :message%>
+          collection: Treatment.all %>
+          <%= f.input :message, placeholder: "Write a message for the recipient"%>
           <%= f.submit "Buy Voucher", class: "waterlily-btn" %>
           <% end %>
         </div>

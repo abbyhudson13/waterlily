@@ -68,4 +68,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def category_params
     params.require(:name).permit(:description, :photo)
   end
+
+  def set_categories
+    @categories = Category.all
+  end
 end
