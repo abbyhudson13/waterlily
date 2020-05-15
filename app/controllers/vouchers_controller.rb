@@ -4,6 +4,7 @@ class VouchersController < ApplicationController
 
   def new
     @voucher = Voucher.new
+    authorize @voucher
   end
 
   def create
@@ -12,7 +13,8 @@ class VouchersController < ApplicationController
     letters = (0..9).to_a + ('a'..'z').to_a + ('A'..'Z').to_a
     voucher_code = Date.today.strftime("%Y%m") + letters.sample(8).join
     expiry_date = (Date.today + 6.months)
-    voucher  = Voucher.create!(treatment: treatment, treatment_name: treatment.title, amount: treatment.standard_price, state: 'pending', user: current_user, message: message, voucher_code: voucher_code, expiry_date: expiry_date)
+    @voucher  = Voucher.create!(treatment: treatment, treatment_name: treatment.title, amount: treatment.standard_price, state: 'pending', user: current_user, message: message, voucher_code: voucher_code, expiry_date: expiry_date)
+    authorize @voucher
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
@@ -21,15 +23,16 @@ class VouchersController < ApplicationController
         currency: 'gbp',
         quantity: 1
       }],
-      success_url: voucher_url(voucher),
-      cancel_url: voucher_url(voucher)
+      success_url: voucher_url(@voucher),
+      cancel_url: voucher_url(@voucher)
     )
-    voucher.update(checkout_session_id: session.id)
-    redirect_to new_voucher_payment_path(voucher)
+    @voucher.update(checkout_session_id: session.id)
+    redirect_to new_voucher_payment_path(@voucher)
   end
 
   def show
     @voucher = Voucher.find(params[:id])
+    authorize @voucher
   end
 
 private
