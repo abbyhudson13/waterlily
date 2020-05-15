@@ -10,7 +10,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' %>
+    <% unless controller_name == "vouchers" && action_name == "show" %>
+     <%= render 'shared/navbar' %>
+    <% end %>
   </head>
 
   <body>
@@ -18,6 +20,9 @@
       <%= yield %>
     </div>
   </body>
-    <%= render 'shared/footer' %>
+  <% unless controller_name == "vouchers" && action_name == "show" %>
+   <%= render 'shared/footer' %>
+  <% end %>
+
 
 </html>

@@ -1,1 +1,29 @@
-<h1>Your Gift Voucher</h1>
+<style>
+  @page { size: auto;  margin: 0mm; }
+</style>
+<div class="container d-flex flex-column align-items-center">
+  <%= image_tag "https://res.cloudinary.com/dqlvehu5z/image/upload/v1586180073/waterlily/WATERLILY_logo_No_BG_OL_copy_uaqkxk.png", width: 500 %>
+<div class="d-flex flex-column align-items-center">
+  <div class="voucher-heading text-center">
+    <h1>Gift Voucher:</h1>
+    <h1><%= @voucher.treatment.title%></h1>
+  </div>
+  <%= cl_image_tag @voucher.treatment.subcategory.category.photo.key, width: 500, class: "mb-3"%>
+  <% if !@voucher.message.nil?%>
+  <h3>Message:</h3>
+  <h3>"<%=@voucher.message%>"</h3>
+  <% end %>
+</div>
+  <div class="voucher-terms w-100">
+    <h6><strong>Description</strong></h6>
+    <p>This voucher entitles you to the above treatment lasting <%= @voucher.treatment.time %> minutes, or any treatment at Waterlily with the equivalent value.</p>
+    <h6><strong>Voucher Usage Terms</strong></h6>
+    <p>This voucher is valid for 6 months from purchase.</p>
+    <p>To book your appointment, please call the salon on 01603 613506 or e-mail indulge@water-lily.co.uk.</p>
+    <p>Please bring in this voucher on the day of your treatment.</p>
+  </div>
+  <div class="voucher-details w-100">
+    <p>Expires: <%= @voucher.expiry_date %></p>
+    <p>Voucher Code: <%= @voucher.voucher_code %></p>
+  </div>
+</div>
