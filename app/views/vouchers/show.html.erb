@@ -4,7 +4,7 @@
   </style>
   <div class="container d-flex flex-column align-items-center">
     <%= image_tag "https://res.cloudinary.com/dqlvehu5z/image/upload/v1586180073/waterlily/WATERLILY_logo_No_BG_OL_copy_uaqkxk.png", width: 500 %>
-    <div class="d-flex flex-column align-items-center">
+    <div class="d-flex flex-column align-items-center voucher-main-content">
       <div class="voucher-heading text-center">
         <h1>Gift Voucher:</h1>
         <h1><%= @voucher.treatment.title%></h1>
@@ -26,6 +26,9 @@
     <div class="voucher-details w-100">
       <p>Expires: <%= @voucher.expiry_date_formatted %></p>
       <p>Voucher Code: <%= @voucher.voucher_code %></p>
+    </div>
+    <div class="wl-address">
+      <p>Waterlily Tanning and Beauty 16 Timberhill, Norwich NR1 3LB </p>
     </div>
   </div>
 <% end %>
