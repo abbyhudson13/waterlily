@@ -1,4 +1,15 @@
-<h1>Gift Vouchers</h1>
-<% @vouchers.each do |voucher|%>
-  <p><%= voucher.treatment.title%></p>
-<%end %>
+<div class="container d-flex flex-column align-items-center">
+  <h1>Gift Vouchers</h1>
+  <% @vouchers.each do |voucher|%>
+    <div class="voucher-card d-flex">
+      <p><%= voucher.treatment.title%></p>
+      <p>Purchased <%=voucher.created_at_formatted%></p>
+
+      <%= link_to "View Voucher", voucher_path(voucher.id), class: "" %>
+    <% if current_user.admin? %>
+      <p> Voucher Code: <%= voucher.voucher_code%></p>
+      <%= link_to "Redeem", voucher_path(voucher.id), class: "" %>
+    <% end %>
+    </div>
+  <%end %>
+</div>
