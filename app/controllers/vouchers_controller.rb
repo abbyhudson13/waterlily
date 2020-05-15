@@ -30,10 +30,15 @@ class VouchersController < ApplicationController
     redirect_to new_voucher_payment_path(@voucher)
   end
 
+  def index
+    @vouchers = policy_scope(Voucher).order(created_at: :desc)
+  end
+
   def show
     @voucher = Voucher.find(params[:id])
     authorize @voucher
   end
+
 
 private
 
