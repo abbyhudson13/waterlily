@@ -23,8 +23,8 @@ class VouchersController < ApplicationController
         currency: 'gbp',
         quantity: 1
       }],
-      success_url: voucher_url(@voucher),
-      cancel_url: voucher_url(@voucher)
+      success_url: vouchers_url,
+      cancel_url: vouchers_url
     )
     @voucher.update(checkout_session_id: session.id)
     redirect_to new_voucher_payment_path(@voucher)
