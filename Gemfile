@@ -33,6 +33,7 @@ gem 'active_storage_validations'
 gem 'simple_form'
 gem 'mail_form'
 gem 'stripe'
+gem 'pundit'
 
 
 # Use Redis adapter to run Action Cable in production
