@@ -1,0 +1,14 @@
+.sessions-form{
+  padding: 30px;
+  background-color: white;
+  margin: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+#forgot-password{
+  color: $wl-grey;
+  &:hover{
+    color: black;
+  }
+}
