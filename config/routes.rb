@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :subcategories, only: [:new, :create, :index, :edit, :update]
   resources :treatments, only: [:new, :create, :index, :edit, :update]
   resources :contacts, only: [:new, :create]
-  resources :vouchers, only: [:new, :show, :create, :index] do
+  resources :vouchers, only: [:new, :show, :create, :index, :edit] do
     resources :payments, only: :new
   end
   devise_for :users, controllers: {

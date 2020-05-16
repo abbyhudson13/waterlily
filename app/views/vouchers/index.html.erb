@@ -2,22 +2,26 @@
   <div class="voucher-index text-center">
     <h1>Gift Vouchers</h1>
     <% @vouchers.each do |voucher|%>
-    <% if voucher.state == "paid" %>
-    <div class="voucher-card d-flex align-items-center">
-      <%= cl_image_tag voucher.treatment.subcategory.category.photo.key, width: 100, class: "mr-3"%>
-      <div class="mr-5 voucher-card-text">
-        <p><%= voucher.treatment.title%></p>
-        <p>Purchased <%=voucher.created_at_formatted%></p>
-      </div>
-        <%= link_to "View Voucher", voucher_path(voucher.id), class: "waterlily-btn p-2", target: :_blank %>
-    <% if current_user.admin? %>
-      <p> Voucher Code: <%= voucher.voucher_code%></p>
-      <%= link_to "Redeem", voucher_path(voucher.id), class: "" %>
-      <% end %>
-    </div>
-    <% end %>
+      <% if voucher.state == "paid" %>
+        <div class="voucher-card d-flex align-items-center">
+        <%= cl_image_tag voucher.treatment.subcategory.category.photo.key, width: 100, class: "mr-3"%>
+        <div class="mr-5 voucher-card-text">
+          <p><%= voucher.treatment.title%></p>
+          <p>Purchased <%=voucher.created_at_formatted%></p>
+        </div>
+        <%= link_to "View Voucher", voucher_path(voucher.id), class: "waterlily-btn p-2 mr-3", target: :_blank %>
+          <% if current_user.admin? %>
+            <p> Code: <%= voucher.voucher_code%></p>
+            <%if voucher.redeemed.nil? || voucher.redeemed.false? %>
+              <p class="active-voucher ml-3">Active</p>
+              <%= link_to "Redeem", edit_voucher_path(voucher.id), class: "waterlily-btn p-2 ml-3" %>
+            <% else %>
+              <p class="used-voucher">Used</p>
+              <%= link_to "Reactivate", edit_voucher_path(voucher.id), class: "waterlily-pill-btn p-2 ml-3" %>
+            <% end %>
+          <% end %>
+        </div>
+      <%end %>
     <%end%>
-
-
   </div>
-  </div>
+</div>

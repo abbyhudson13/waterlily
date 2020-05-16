@@ -1,6 +1,7 @@
 class VouchersController < ApplicationController
   before_action :authenticate_user!, only: :create
   before_action :set_categories
+  before_action :set_voucher, only: [:show, :edit, :update]
 
   def new
     @voucher = Voucher.new
@@ -35,14 +36,27 @@ class VouchersController < ApplicationController
   end
 
   def show
-    @voucher = Voucher.find(params[:id])
     authorize @voucher
   end
 
+  def edit
+  end
+
+  def update
+    @voucher.update(voucher_params)
+  end
 
 private
 
+  def voucher_params
+    params.require(:voucher).permit(:price, :voucher_code, :expiry_date, :redeemed, :treatment_id)
+  end
+
   def set_categories
     @categories = Category.all
+  end
+
+  def set_voucher
+    @voucher = Voucher.find(params[:id])
   end
 end
