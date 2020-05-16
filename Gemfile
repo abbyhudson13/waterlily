@@ -8,7 +8,6 @@ gem 'money-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
-gem 'stripe_event'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -34,6 +33,7 @@ gem 'simple_form'
 gem 'mail_form'
 gem 'stripe'
 gem 'pundit'
+gem 'stripe_event'
 
 
 # Use Redis adapter to run Action Cable in production
