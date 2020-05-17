@@ -1,7 +1,7 @@
 class TreatmentsController < ApplicationController
-
+before_action :set_treatment, only: [:edit, :update, :destroy]
+before_action :set_categories
   def index
-    @categories = Category.all
     if params[:query].present?
       sql_query = " \
       treatments.title ILIKE :query \
@@ -9,27 +9,58 @@ class TreatmentsController < ApplicationController
       OR subcategories.description ILIKE :query \
       OR treatments.description ILIKE :query \
       "
-      @treatments = Treatment.joins(:subcategory).where(sql_query, query: "%#{params[:query]}%")
+      @treatments = policy_scope(Treatment).joins(:subcategory).where(sql_query, query: "%#{params[:query]}%")
     else
-      @treatments = Treatment.all
+      @treatments = policy_scope(Treatment).all
     end
   end
 
   def new
-    @subcategories = subcategories.all
+    @subcategories = Subcategory.all
     @treatment = Treatment.new
+    authorize @treatment
   end
 
   def create
     @treatment = Treatment.new(treatment_params)
     if @treatment.save!
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :new
     end
+    authorize @treatment
   end
-end
 
-def treatment_params
-  params.require(:treatment).permit(:description, :name, :subcategory_id, :standard_price, :time, :special_offer)
+  def edit
+  end
+
+  def update
+    @treatment.update(treatment_params)
+    if @treatment.save!
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
+    authorize @treatment
+  end
+
+  def destroy
+    @treatment.destroy
+    redirect_to dashboard_path
+    authorize @treatment
+  end
+
+private
+  def set_treatment
+    @treatment = Treatment.find(params[:id])
+  end
+
+  def treatment_params
+    params.require(:treatment).permit(:time, :title, :description, :title, :subcategory_id, :standard_price, :special_offer, :offer_price, :variable_price)
+  end
+
+  def set_categories
+    @categories = Category.all
+  end
+
 end

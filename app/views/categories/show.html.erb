@@ -9,12 +9,12 @@
   </div>
   <ul class="nav nav-pills mt-30 justify-content-center" id="pills-tab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link waterlily-pill-btn mr-3 active" id="pills-all-tab" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="false">All Treatments</a>
+      <a class="nav-link waterlily-pill-btn mr-3 mt-2 active" id="pills-all-tab" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="false">All Treatments</a>
     </li>
     <% if @category.subcategories.length > 1 %>
     <% @category.subcategories.each do |subcategory| %>
     <li class="nav-item">
-      <a class="nav-link waterlily-pill-btn mr-3" id="pills-<%=subcategory.id %>-tab" data-toggle="pill" href="#pills-<%=subcategory.id %>" role="tab" aria-controls="pills-<%=subcategory.id%>" aria-selected="false"><%= subcategory.name %></a>
+      <a class="nav-link waterlily-pill-btn mr-3 mt-2" id="pills-<%=subcategory.id %>-tab" data-toggle="pill" href="#pills-<%=subcategory.id %>" role="tab" aria-controls="pills-<%=subcategory.id%>" aria-selected="false"><%= subcategory.name %></a>
     </li>
     <%end%>
     <%end%>
