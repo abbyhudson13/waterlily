@@ -25,3 +25,10 @@ $(document).on('turbolinks:load', function() {
       "ordering": false
     });
 } );
+
+$(document).on('turbolinks:load', function() {
+    $('#dttb2').DataTable({
+      "autoWidth": false,
+      "ordering": false
+    });
+} );
