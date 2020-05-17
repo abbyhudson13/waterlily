@@ -14,6 +14,14 @@ class VoucherPolicy < ApplicationPolicy
     return true
   end
 
+  def edit?
+    user.admin
+  end
+
+  def update?
+    user.admin
+  end
+
   def show?
     @voucher.user == user || user.admin
   end
