@@ -1,21 +1,14 @@
-<div class="container wl-new">
-  <div class="d-flex flex-column align-items-center">
-    <div class="p-10">
-      <h2 class="text-center">Treatment</h2>
-      <%= simple_form_for [@treatment], html: { class: "wl_form"}   do |f| %>
-      <div class="d-flex flex-column align-items-center">
-        <%= f.input :title %>
-        <%= f.input :subcategory_id,
-        collection: Subcategory.all%>
-        <%= f.input :description %>
-        <%= f.input :standard_price, label: 'Standard Price (before discount)' %>
-        <%= f.input :time, label: 'Duration of treatment (minutes)'%>
-        <%= f.input :special_offer, as: :select, label: 'Is there a special offer?'%>
-        <%= f.input :offer_price, label: 'What is the discounted price?'%>
-        <%= f.input :variable_price, as: :select, label: 'Does the price vary? (eg. From £12)'%>
-        <%= f.submit "Submit", class: "navbar-button" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<%= simple_form_for [@treatment], html: { class: "wl_form"}   do |f| %>
+<div class="treatment-form">
+  <%= f.input :title %>
+  <%= f.input :subcategory_id,
+  collection: Subcategory.all%>
+  <%= f.input :description %>
+  <%= f.input :standard_price, label: 'Standard Price (before discount)' %>
+  <%= f.input :time, label: 'Duration of treatment (minutes)'%>
+  <%= f.input :special_offer, as: :select, label: 'Is there a special offer?'%>
+  <%= f.input :offer_price, label: 'What is the discounted price?'%>
+  <%= f.input :variable_price, as: :select, label: 'Does the price vary? (eg. From £12)'%>
+  <%= f.submit "Submit", class: "navbar-button" %>
+  <% end %>
 </div>
