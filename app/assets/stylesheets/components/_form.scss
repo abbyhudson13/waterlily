@@ -34,12 +34,20 @@ textarea:focus {
   display: none;
 }
 
-.contact-form {
+.contact-form, .treatment-form {
   margin-top: 20px;
   background-color: white;
-  width: 60%;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.treatment-form{
+  padding: 20px;
+  width: 500px;
+  margin-bottom: 20px;
+}
+.contact-form{
+  width: 60%;
 }
 
 .contact-form-content {
