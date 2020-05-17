@@ -1,5 +1,5 @@
 meta_product_name: "Waterlily Tanning & Beauty"
 meta_title: "Beauty salon in the heart of Norwich"
 meta_description: "We have been based in Timberhill in the heart of Norwich for over 25 years. We offer a range of treatments for customers, including Vertical Tanning, Manicures, Pedicures, Waxing, Facials and Massage. You can relax from head to toe in our friendly, welcoming salon and leave feeling rejuvenated. You'll be glad you stopped by!"
-meta_image: "logo.jpg" # should exist in `app/assets/images/`
+meta_image: "shop.jpg" # should exist in `app/assets/images/`
 twitter_account: "@Waterlily_Salon"   # required for Twitter Cards

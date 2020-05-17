@@ -1,1 +1,9 @@
-<p>Edit</p>
+<div class="container d-flex flex-column align-items-center">
+  <h1 class="redeem-header">Redeem Voucher</h1>
+  <div class="wl-redeem">
+    <%= simple_form_for(@voucher) do |f| %>
+    <%= f.input :redeemed, as: :select, label: 'Has this voucher been redeemed?' %>
+    <%= f.submit "Save", class: "waterlily-btn p-2" %>
+    <% end %>
+  </div>
+</div>

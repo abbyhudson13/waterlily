@@ -40,10 +40,17 @@ class VouchersController < ApplicationController
   end
 
   def edit
+    authorize @voucher
   end
 
   def update
     @voucher.update(voucher_params)
+    if @voucher.save!
+      redirect_to vouchers_path
+    else
+      render :edit
+    end
+    authorize @voucher
   end
 
 private
