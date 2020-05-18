@@ -57,9 +57,9 @@
           <%= cl_image_tag offer.subcategory.category.photo.key, width: 300, height: 200, :effect=>"brightness:-15", class: "offer-image"%>
           <h3 class="offer-title"><%= offer.title %></h3 class="offer-title">
             <% if (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100)  %1 == 0 %>
-              <h3><%= (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100 ).to_i %>% Off</h3>
+            <h3><%= (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100 ).to_i %>% Off</h3>
             <% else %>
-              <h3>Save £<%= offer.standard_price - offer.offer_price%></h3>
+            <h3>Save £<%= offer.standard_price - offer.offer_price%></h3>
             <% end %>
             <div class="d-flex justify-content-center">
               <p><del>£<%= offer.standard_price%></del></p>
@@ -69,7 +69,8 @@
         </div>
         <% end %>
       </div>
-       <%= render "./shared/booking_link" %>
+      <%= render "./shared/booking_link" %>
+
       <hr/>
     </div>
   </body>
