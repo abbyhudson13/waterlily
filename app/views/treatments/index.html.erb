@@ -34,21 +34,21 @@
           </div>
         </td>
         <% else %>
-        <td><%= treatment.title%></td>
+          <td><%= treatment.title%></td>
         <% end %>
         <% if treatment.time >1 %>
-        <td class="time-td"><%= treatment.time%> minutes</td>
+          <td class="time-td"><%= treatment.time%> minutes</td>
         <% else %>
-        <td class="time-td"><%= treatment.time%> minute</td>
+          <td class="time-td"><%= treatment.time%> minute</td>
         <% end %>
         <% if !treatment.variable_price == nil? && treatment.variable_price == true %>
-        <td>from £<%= treatment.standard_price%></td>
+          <td>from £<%= treatment.standard_price%></td>
         <%else%>
-        <% if treatment.special_offer == true %>
-        <td><strike>£<%= treatment.standard_price%> </strike>  £<%= treatment.offer_price%> </td>
-        <% else %>
-        <td>£<%= treatment.standard_price%></td>
-        <% end %>
+          <% if treatment.special_offer == true %>
+            <td><strike>£<%= treatment.standard_price%> </strike>  £<%= treatment.offer_price%> </td>
+          <% else %>
+          <td>£<%= treatment.standard_price%></td>
+          <% end %>
         <%end%>
       </tr>
       <% end %>
