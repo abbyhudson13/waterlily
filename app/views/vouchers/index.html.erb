@@ -15,7 +15,6 @@
             <%if voucher.redeemed.nil? || !voucher.redeemed? %>
               <p class="active-voucher ml-3">Active</p>
               <%= link_to "Redeem", edit_voucher_path(voucher.id), class: "waterlily-btn p-2 ml-3" %>
-
             <% else %>
               <p class="used-voucher ml-3">Used</p>
               <%= link_to "Reactivate", edit_voucher_path(voucher.id), class: "waterlily-pill-btn p-2 ml-3" %>
