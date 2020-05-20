@@ -5,11 +5,16 @@
       <h4>Tanning and Beauty Salon in the Heart of Norwich</h4>
       <div class="">
         <%= form_tag treatments_path, method: :get, class: "search-form-all" do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "search-form",
-        placeholder: "Find a treatment"  %>
-        <%= submit_tag "Search", class: "btn waterlily-btn", id: "search-btn" %>
+        <div id="search-data" class="form-search search-data" data-subcategories="<%= @subcategories.to_json %>">
+          <%= text_field_tag :query,
+          params[:query],
+          autocomplete: :off,
+          class: "search-form form-control search-input",
+          placeholder: "Find a treatment"  %>
+          <ul class="suggestions">
+          </ul>
+          <%= submit_tag "Search", class: "btn waterlily-btn", id: "search-btn" %>
+        </div>
         <% end %>
       </div>
     </div>
@@ -30,7 +35,7 @@
           </div>
         </div>
       </div>
-      <% end %>
+        <% end %>
       <% end %>
     </div>
     <hr/>
@@ -52,22 +57,22 @@
     <hr/>
     <div class="row justify-content-center">
       <% @special_offers.each do |offer|%>
-        <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 m-3">
-          <div class="offer-card col">
-            <div class="d-flex card-content flex-column text-center align-items-center justify-content-center">
-              <%= cl_image_tag offer.subcategory.category.photo.key, width: 300, height: 200, :effect=>"brightness:-15", class: "offer-image"%>
-              <h3 class="offer-title"><%= offer.title %></h3 class="offer-title">
-                <% if (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100)  %1 == 0 %>
-                <h3><%= (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100 ).to_i %>% Off</h3>
-                <% else %>
-                <h3>Save £<%= offer.standard_price - offer.offer_price%></h3>
-                <% end %>
-                <div class="d-flex justify-content-center">
-                  <p><del>£<%= offer.standard_price%></del></p>
-                  <h5 class="ml-1">£<%= offer.offer_price%></h5>
-                </div>
+      <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 m-3">
+        <div class="offer-card col">
+          <div class="d-flex card-content flex-column text-center align-items-center justify-content-center">
+            <%= cl_image_tag offer.subcategory.category.photo.key, width: 300, height: 200, :effect=>"brightness:-15", class: "offer-image"%>
+            <h3 class="offer-title"><%= offer.title %></h3 class="offer-title">
+              <% if (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100)  %1 == 0 %>
+              <h3><%= (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100 ).to_i %>% Off</h3>
+              <% else %>
+              <h3>Save £<%= offer.standard_price - offer.offer_price%></h3>
+              <% end %>
+              <div class="d-flex justify-content-center">
+                <p><del>£<%= offer.standard_price%></del></p>
+                <h5 class="ml-1">£<%= offer.offer_price%></h5>
               </div>
             </div>
+          </div>
         </div>
         <% end %>
       </div>

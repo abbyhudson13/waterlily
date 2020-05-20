@@ -4,6 +4,10 @@ before_action :set_categories, :set_offers
     @categories = Category.all
   end
 
+  def home
+      @subcategories = Subcategory.pluck(:name).sort
+  end
+
   def set_offers
     @special_offers = Treatment.where(special_offer: true)
   end
