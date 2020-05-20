@@ -9,6 +9,7 @@ class VouchersController < ApplicationController
   end
 
   def create
+    @user = current_user
     treatment = Treatment.find(params[:voucher][:treatment_id])
     message = params[:voucher][:message]
     letters = (0..9).to_a + ('a'..'z').to_a + ('A'..'Z').to_a
@@ -29,6 +30,7 @@ class VouchersController < ApplicationController
     )
     @voucher.update(checkout_session_id: session.id)
     redirect_to new_voucher_payment_path(@voucher)
+    UserNotifierMailer.voucher_purchase_email(@user).deliver
   end
 
   def index
