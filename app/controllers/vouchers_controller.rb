@@ -30,7 +30,6 @@ class VouchersController < ApplicationController
     )
     @voucher.update(checkout_session_id: session.id)
     redirect_to new_voucher_payment_path(@voucher)
-    UserNotifierMailer.voucher_purchase_email(@user).deliver
   end
 
   def index
