@@ -4,7 +4,7 @@
     <% @vouchers.each do |voucher|%>
       <% if voucher.state == "paid" %>
         <div class="voucher-card d-flex align-items-center">
-        <%= cl_image_tag voucher.treatment.subcategory.category.photo.key, width: 100, class: "mr-3"%>
+        <%= cl_image_tag voucher.treatment.subcategory.category.photo.key, width: 100, class: "mr-3 d-none d-md-block"%>
         <div class="mr-5 voucher-card-text">
           <p><%= voucher.treatment.title%></p>
           <p>Purchased <%=voucher.created_at_formatted%></p>
@@ -13,7 +13,7 @@
           <% if current_user.admin? %>
             <p> Code: <%= voucher.voucher_code%></p>
             <%if voucher.redeemed.nil? || !voucher.redeemed? %>
-              <p class="active-voucher ml-3">Active</p>
+              <p class="active-voucher ml-3 d-none d-md-block">Active</p>
               <%= link_to "Redeem", edit_voucher_path(voucher.id), class: "waterlily-btn p-2 ml-3" %>
             <% else %>
               <p class="used-voucher ml-3">Used</p>
