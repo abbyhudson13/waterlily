@@ -7,131 +7,133 @@
       <%= @category.description %>
     </div>
   </div>
-  <ul class="nav nav-pills mt-3 justify-content-center" id="pills-tab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link waterlily-pill-btn mr-3 mt-2 active" id="pills-all-tab" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="false">All Treatments</a>
-    </li>
-    <% if @category.subcategories.length > 1 %>
-      <% @category.subcategories.each do |subcategory| %>
+  <% unless @category.name === "Cosmetic Treatments" %>
+    <ul class="nav nav-pills mt-3 justify-content-center" id="pills-tab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link waterlily-pill-btn mr-3 mt-2" id="pills-<%=subcategory.id %>-tab" data-toggle="pill" href="#pills-<%=subcategory.id %>" role="tab" aria-controls="pills-<%=subcategory.id%>" aria-selected="false"><%= subcategory.name %></a>
+        <a class="nav-link waterlily-pill-btn mr-3 mt-2 active" id="pills-all-tab" data-toggle="pill" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="false">All Treatments</a>
       </li>
+      <% if @category.subcategories.length > 1 %>
+        <% @category.subcategories.each do |subcategory| %>
+        <li class="nav-item">
+          <a class="nav-link waterlily-pill-btn mr-3 mt-2" id="pills-<%=subcategory.id %>-tab" data-toggle="pill" href="#pills-<%=subcategory.id %>" role="tab" aria-controls="pills-<%=subcategory.id%>" aria-selected="false"><%= subcategory.name %></a>
+        </li>
+        <%end%>
       <%end%>
-    <%end%>
-  </ul>
-  <div class="tab-content col-lg-9 col-md-12 col-sm-12" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
-      <table class="table wl-table">
-        <thead>
-          <th>Treatment</th>
-          <th>Duration</th>
-          <th>Price</th>
-        </thead>
-        <tbody>
-          <% @category.treatments.each do |treatment|%>
-          <tr>
-            <% if !treatment.description == nil?%>
-            <td><%= treatment.title%>
-            <a href="#" data-toggle="modal" data-target="#modal-all-<%=treatment.id%>">
-              <i class="fas fa-info-circle" ></i>
-            </a>
-            <div class="modal fade" id="modal-all-<%=treatment.id%>" tabindex="-1" role="dialog" aria-labelledby="<%=treatment.id%>-modalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="modal-all-<%=treatment.id%>Label"><%=treatment.title%></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <%=treatment.description%>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn waterlily-btn" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </td>
-            <% else %>
-            <td><%= treatment.title%></td>
-            <% end %>
-              <% if treatment.time >1 %>
-                <td class="time-td"><%= treatment.time%> minutes</td>
-              <% else %>
-                <td class="time-td"><%= treatment.time%> minute</td>
-              <% end %>
-            <% if !treatment.variable_price == nil? && treatment.variable_price == true %>
-              <td>from £<%= treatment.standard_price%></td>
-            <%else%>
-            <% if treatment.special_offer == true %>
-            <td><strike>£<%= treatment.standard_price%> </strike>  £<%= treatment.offer_price%> </td>
-            <% else %>
-              <td>£<%= treatment.standard_price%></td>
-              <%end%>
-            <%end%>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <% if @category.subcategories.length > 1 %>
-    <% @category.subcategories.each do |subcategory| %>
-    <div class="tab-pane fade show" id="pills-<%=subcategory.id %>" role="tabpanel" aria-labelledby="pills-<%=subcategory.id%>-tab">
-      <table class="wl-table table">
-        <thead>
-          <th>Treatment</th>
-          <th>Duration</th>
-          <th>Price</th>
-        </thead>
-        <tbody>
-          <% subcategory.treatments.each do |treatment|%>
-          <tr>
-            <% if !treatment.description == nil?%>
+    </ul>
+    <div class="tab-content col-lg-9 col-md-12 col-sm-12" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+        <table class="table wl-table">
+          <thead>
+            <th>Treatment</th>
+            <th>Duration</th>
+            <th>Price</th>
+          </thead>
+          <tbody>
+            <% @category.treatments.each do |treatment|%>
+            <tr>
+              <% if !treatment.description == nil?%>
               <td><%= treatment.title%>
-                <a href="#" data-toggle="modal" data-target="#modal-<%=treatment.id%>">
-                  <i class="fas fa-info-circle" ></i>
-                </a>
-                <div class="modal fade" id="modal-<%=treatment.id%>" tabindex="-1" role="dialog" aria-labelledby="<%=treatment.id%>-modalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="modal-<%=treatment.id%>Label"><%=treatment.title%></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <%=treatment.description%>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn waterlily-btn" data-dismiss="modal">Close</button>
-                      </div>
+              <a href="#" data-toggle="modal" data-target="#modal-all-<%=treatment.id%>">
+                <i class="fas fa-info-circle" ></i>
+              </a>
+              <div class="modal fade" id="modal-all-<%=treatment.id%>" tabindex="-1" role="dialog" aria-labelledby="<%=treatment.id%>-modalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal-all-<%=treatment.id%>Label"><%=treatment.title%></h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%=treatment.description%>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn waterlily-btn" data-dismiss="modal">Close</button>
                     </div>
                   </div>
                 </div>
-            </td>
-            <% else %>
+              </div>
+          </td>
+              <% else %>
               <td><%= treatment.title%></td>
-            <% end %>
-              <td class="time-td"><%= treatment.time%> minutes</td>
-            <% if !treatment.variable_price == nil? && treatment.variable_price == true %>
-              <td>from £<%= treatment.standard_price%></td>
-            <%else%>
-            <% if treatment.special_offer == true %>
-            <td><strike>£<%= treatment.standard_price%> </strike>  £<%= treatment.offer_price%> </td>
-            <% else %>
-              <td>£<%= treatment.standard_price%></td>
               <% end %>
-            <%end%>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+                <% if treatment.time >1 %>
+                  <td class="time-td"><%= treatment.time%> minutes</td>
+                <% else %>
+                  <td class="time-td"><%= treatment.time%> minute</td>
+                <% end %>
+              <% if !treatment.variable_price == nil? && treatment.variable_price == true %>
+                <td>from £<%= treatment.standard_price%></td>
+              <%else%>
+              <% if treatment.special_offer == true %>
+              <td><strike>£<%= treatment.standard_price%> </strike>  £<%= treatment.offer_price%> </td>
+              <% else %>
+                <td>£<%= treatment.standard_price%></td>
+                <%end%>
+              <%end%>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <% if @category.subcategories.length > 1 %>
+      <% @category.subcategories.each do |subcategory| %>
+      <div class="tab-pane fade show" id="pills-<%=subcategory.id %>" role="tabpanel" aria-labelledby="pills-<%=subcategory.id%>-tab">
+        <table class="wl-table table">
+          <thead>
+            <th>Treatment</th>
+            <th>Duration</th>
+            <th>Price</th>
+          </thead>
+          <tbody>
+            <% subcategory.treatments.each do |treatment|%>
+            <tr>
+              <% if !treatment.description == nil?%>
+                <td><%= treatment.title%>
+                  <a href="#" data-toggle="modal" data-target="#modal-<%=treatment.id%>">
+                    <i class="fas fa-info-circle" ></i>
+                  </a>
+                  <div class="modal fade" id="modal-<%=treatment.id%>" tabindex="-1" role="dialog" aria-labelledby="<%=treatment.id%>-modalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modal-<%=treatment.id%>Label"><%=treatment.title%></h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <%=treatment.description%>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn waterlily-btn" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </td>
+              <% else %>
+                <td><%= treatment.title%></td>
+              <% end %>
+                <td class="time-td"><%= treatment.time%> minutes</td>
+              <% if !treatment.variable_price == nil? && treatment.variable_price == true %>
+                <td>from £<%= treatment.standard_price%></td>
+              <%else%>
+              <% if treatment.special_offer == true %>
+              <td><strike>£<%= treatment.standard_price%> </strike>  £<%= treatment.offer_price%> </td>
+              <% else %>
+                <td>£<%= treatment.standard_price%></td>
+                <% end %>
+              <%end%>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <%end%>
+      <%end%>
     </div>
-    <%end%>
-    <%end%>
-  </div>
+  <% end %>
   <%= render "./shared/booking_link" %>
 </div>
