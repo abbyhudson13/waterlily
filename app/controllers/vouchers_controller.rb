@@ -1,5 +1,5 @@
 class VouchersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:new]
   before_action :set_categories
   before_action :set_voucher, only: [:show, :edit, :update]
 
