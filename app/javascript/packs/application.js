@@ -8,6 +8,7 @@
 // layout file, like app/views/layouts/application.html.erb
 import 'bootstrap';
 import { initMapbox } from '../plugins/init_mapbox';
+import { autocompleteSearch } from './autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();

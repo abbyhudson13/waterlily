@@ -50,3 +50,23 @@ hr{
   max-width: 1500px;
   align-self: center;
 }
+
+ul{
+  list-style: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.search-complete{
+  background-color: white;
+  width: 300px;
+  margin-left: -26px;
+  padding: 5px;
+  &:hover{
+    background-color: $wl-lightgreen;
+  }
+}
+
+#search-data{
+  display: flex;
+}

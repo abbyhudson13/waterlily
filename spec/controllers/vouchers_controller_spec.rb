@@ -28,5 +28,4 @@ RSpec.describe VouchersController, type: :controller do
     end
   end
 
-
 end
