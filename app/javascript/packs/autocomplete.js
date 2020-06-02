@@ -13,11 +13,9 @@ const suggestions = document.querySelector('.suggestions');
   function displayMatches() {
   const matchArray = findMatches(this.value, subcategories);
   const html = matchArray.map(result => {
-    const regex = new RegExp(this.value, 'gi');
-    const subCat = result.replace(regex, `<span class="hl">${this.value}</span>`);
     return `
       <li class="search-complete">
-        <a href=""><span id="name">${subCat}</span></a>
+        <a href="/treatments?utf8=%E2%9C%93&query=${result}&commit=Search"><span id="name">${result}</span></a>
       </li>
     `;
   }).join('');
