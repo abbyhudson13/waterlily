@@ -8,6 +8,10 @@ before_action :set_categories, :set_offers
     @special_offers = Treatment.where(special_offer: true)
   end
 
+  def home
+    @subcategories = Subcategory.pluck(:name).sort
+  end 
+
   def dashboard
     @treatments = policy_scope(Treatment)
   end

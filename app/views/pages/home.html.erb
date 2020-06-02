@@ -5,12 +5,16 @@
       <h4>Tanning and Beauty Salon in the Heart of Norwich</h4>
       <div class="">
         <%= form_tag treatments_path, method: :get, class: "search-form-all" do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "search-form",
-        autocomplete: :off,
-        placeholder: "Find a treatment"  %>
-        <%= submit_tag "Search", class: "btn waterlily-btn", id: "search-btn" %>
+        <div id="search-data" class="form-search search-data" data-subcategories="<%= @subcategories.to_json %>">
+          <%= text_field_tag :query,
+          params[:query],
+          class: "search-form form-control search-input",
+          autocomplete: :off,
+          placeholder: "Find a treatment"  %>
+            <%= submit_tag "Search", class: "btn waterlily-btn", id: "search-btn" %>
+                    </div>
+          <ul class="suggestions">
+          </ul>
         <% end %>
       </div>
     </div>
