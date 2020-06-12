@@ -11,3 +11,17 @@
 #dttb2_wrapper{
   margin-bottom: 50px;
 }
+
+.text-link {
+  text-decoration: none;
+  color: $wl-khaki;
+  &:hover{
+    color: $wl-darkgreen;
+  }
+}
+
+#new-lamps {
+  background-color: #FFFFE0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
