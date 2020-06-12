@@ -24,6 +24,5 @@ const suggestions = document.querySelector('.suggestions');
 
 searchInput.addEventListener('keyup', displayMatches);
 
-
-
-export { autocompleteSearch };
+export { findMatches };
+export { displayMatches };
