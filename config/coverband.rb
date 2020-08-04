@@ -1,3 +1,3 @@
-Coverband.configure do
+Coverband.configure do |config|
   config.track_views = true
 end
