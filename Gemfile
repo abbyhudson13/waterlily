@@ -34,7 +34,7 @@ gem 'mail_form'
 gem 'stripe'
 gem 'pundit'
 gem 'stripe_event'
-
+gem 'coverband'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
