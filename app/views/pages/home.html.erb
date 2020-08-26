@@ -2,6 +2,15 @@
   <head>
     <%= javascript_pack_tag 'autocomplete', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176434059-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-176434059-1');
+  </script>
   <div id="banner" class="d-flex flex-column align-items-end justify-content-center">
     <div class="homepage-header">
       <h1>Welcome to Waterlily</h1>
@@ -14,10 +23,10 @@
           class: "search-form form-control search-input",
           autocomplete: :off,
           placeholder: "Find a treatment"  %>
-            <%= submit_tag "Search", class: "btn waterlily-btn", id: "search-btn" %>
-                    </div>
-          <ul class="suggestions">
-          </ul>
+          <%= submit_tag "Search", class: "btn waterlily-btn", id: "search-btn" %>
+        </div>
+        <ul class="suggestions">
+        </ul>
         <% end %>
       </div>
     </div>
@@ -61,22 +70,22 @@
     <hr/>
     <div class="row justify-content-center">
       <% @special_offers.each do |offer|%>
-        <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 m-3">
-          <div class="offer-card col">
-            <div class="d-flex card-content flex-column text-center align-items-center justify-content-center">
-              <%= cl_image_tag offer.subcategory.category.photo.key, width: 300, height: 200, :effect=>"brightness:-15", class: "offer-image"%>
-              <h3 class="offer-title"><%= offer.title %></h3 class="offer-title">
-                <% if (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100)  %1 == 0 %>
-                <h3><%= (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100 ).to_i %>% Off</h3>
-                <% else %>
-                <h3>Save £<%= offer.standard_price - offer.offer_price%></h3>
-                <% end %>
-                <div class="d-flex justify-content-center">
-                  <p><del>£<%= offer.standard_price%></del></p>
-                  <h5 class="ml-1">£<%= offer.offer_price%></h5>
-                </div>
+      <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 m-3">
+        <div class="offer-card col">
+          <div class="d-flex card-content flex-column text-center align-items-center justify-content-center">
+            <%= cl_image_tag offer.subcategory.category.photo.key, width: 300, height: 200, :effect=>"brightness:-15", class: "offer-image"%>
+            <h3 class="offer-title"><%= offer.title %></h3 class="offer-title">
+              <% if (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100)  %1 == 0 %>
+              <h3><%= (((offer.standard_price - offer.offer_price) / offer.standard_price) * 100 ).to_i %>% Off</h3>
+              <% else %>
+              <h3>Save £<%= offer.standard_price - offer.offer_price%></h3>
+              <% end %>
+              <div class="d-flex justify-content-center">
+                <p><del>£<%= offer.standard_price%></del></p>
+                <h5 class="ml-1">£<%= offer.offer_price%></h5>
               </div>
             </div>
+          </div>
         </div>
         <% end %>
       </div>
