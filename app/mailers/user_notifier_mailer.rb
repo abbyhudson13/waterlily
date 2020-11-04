@@ -6,4 +6,9 @@ class UserNotifierMailer < ApplicationMailer
     mail( :to => @user.email,
       :subject => 'Thank you for your gift voucher purchase!')
   end
+
+  def notify_waterlily_email(user)
+    mail( :to => 'indulge@water-lily.co.uk',
+    :subject => 'A gift voucher has been purchased')
+  end
 end
