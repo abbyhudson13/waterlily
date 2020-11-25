@@ -5,7 +5,7 @@ task black_friday_deals: :environment do
 
   treatments.find_each do |treatment|
     treatment.special_offer = true
-    treatment.offer_price = treatment.standard_price * 0.85
+    treatment.offer_price = treatment.standard_price * 0.8
     treatment.save!
   end
   puts "Done! 🏁 🏁 🏁"
