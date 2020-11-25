@@ -15,13 +15,14 @@ class VouchersController < ApplicationController
     letters = (0..9).to_a + ('a'..'z').to_a + ('A'..'Z').to_a
     voucher_code = Date.today.strftime("%Y%m") + letters.sample(8).join
     expiry_date = (Date.today + 6.months)
-    @voucher  = Voucher.create!(treatment: treatment, treatment_name: treatment.title, amount: treatment.standard_price, state: 'pending', user: current_user, message: message, voucher_code: voucher_code, expiry_date: expiry_date)
+        price = treatment.special_offer? ? treatment.offer_price_cents : treatment.standard_price_cents
+    @voucher  = Voucher.create!(treatment: treatment, treatment_name: treatment.title, amount: price, state: 'pending', user: current_user, message: message, voucher_code: voucher_code, expiry_date: expiry_date)
     authorize @voucher
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
         name: treatment.title,
-        amount: treatment.standard_price_cents,
+        amount: price,
         currency: 'gbp',
         quantity: 1
       }],
