@@ -4,7 +4,7 @@
         <h2 class="pb-2">Checkout Summary</h2>
         <%= cl_image_tag @voucher.treatment.subcategory.category.photo.key, width: 300, height: 200, class: "mb-3"%>
           <p>1 x Gift Voucher for <strong><%= @voucher.treatment.title %></strong></p>
-          <p>Total: <strong><%= humanized_money_with_symbol @voucher.amount %></strong></p>
+          <p>Total: <strong><%= humanized_money_with_symbol @voucher.amount / 100 %></strong></p>
           <p>Message: "<%= @voucher.message %>"</p>
           <p>Your E-Voucher will be availble to print or download after purchase.</p>
         <button id="pay" class="btn waterlily-btn">Proceed to Payment</button>
