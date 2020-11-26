@@ -7,6 +7,10 @@ class Treatment < ApplicationRecord
   validates :time, presence: true
   validates :standard_price, presence: true
   def to_label
-    "#{self.title} - £#{self.special_offer? ? self.offer_price : self.standard_price}"
+    if self.special_offer == true
+      "#{self.title} - £#{self.offer_price} (was £#{self.standard_price}) "
+    else
+    "#{self.title} - £#{self.standard_price}"
+    end
   end
 end
