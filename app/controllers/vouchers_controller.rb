@@ -38,6 +38,7 @@ class VouchersController < ApplicationController
   end
 
   def show
+    @subcategory_name = @voucher.treatment.subcategory.name
     authorize @voucher
   end
 
