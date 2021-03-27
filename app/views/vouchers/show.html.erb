@@ -17,7 +17,11 @@
     </div>
     <div class="voucher-terms w-100">
       <h6><strong>Description</strong></h6>
-      <p>This voucher entitles you to the above treatment lasting <%= @voucher.treatment.time %> minutes, or any treatment at Waterlily with the equivalent value.</p>
+      <% if @subcategory_name == "Vouchers"%>
+        <p>This voucher entitles you to a credit of £<%= @voucher.amount_cents / 10000%> to spend on any treatment at Waterlily Tanning & Beauty. </p>
+      <% else %>
+        <p>This voucher entitles you to the above treatment lasting <%= @voucher.treatment.time %> minutes, or any treatment at Waterlily with the equivalent value.</p>
+      <% end %>
       <h6><strong>Voucher Usage Terms</strong></h6>
       <p>This voucher is valid for 6 months from purchase.</p>
       <p>To book your appointment, please call the salon on 01603 613506 or e-mail indulge@water-lily.co.uk.</p>
