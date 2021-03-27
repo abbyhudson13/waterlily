@@ -1,5 +1,5 @@
 
-desc "2021-03-25: Add vouchers for single amounts"
+desc "2021-03-27: Add vouchers for single amounts"
 task add_vouchers: :environment do
   file = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276135/waterlily/tanning.jpg')
   voucher_category = Category.create(name: "Vouchers")
