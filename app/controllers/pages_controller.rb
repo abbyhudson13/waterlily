@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 before_action :set_categories, :set_offers
   def set_categories
-    @categories = Category.all
+    @categories = Category.where.not(name: "Vouchers")
   end
 
   def set_offers
@@ -10,7 +10,7 @@ before_action :set_categories, :set_offers
 
   def home
     @subcategories = Subcategory.pluck(:name).sort
-  end 
+  end
 
   def dashboard
     @treatments = policy_scope(Treatment)
