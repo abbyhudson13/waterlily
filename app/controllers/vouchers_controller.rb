@@ -40,6 +40,12 @@ class VouchersController < ApplicationController
   def show
     @subcategory_name = @voucher.treatment.subcategory.name
     authorize @voucher
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "show.pdf.erb", :template => 'vouchers/show.html.erb'
+      end
+    end
   end
 
   def edit
