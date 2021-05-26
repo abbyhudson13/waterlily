@@ -43,7 +43,7 @@ class VouchersController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render :pdf => "show.pdf.erb", :template => 'vouchers/show.html.erb'
+        render :pdf => "show", :template => 'vouchers/show.html.erb', :layout => "pdf.html.erb"
       end
     end
   end
