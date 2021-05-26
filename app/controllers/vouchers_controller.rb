@@ -44,7 +44,7 @@ class VouchersController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render :pdf => "show", :template => 'vouchers/show.html.erb', :layout => "pdf.html.erb"
+        render pdf: "show", template: 'vouchers/show.html.erb', layout: "pdf.html.erb"
       end
     end
   end
@@ -79,7 +79,7 @@ private
   end
 
   def generate_qr_code
-    qrcode = RQRCode::QRCode.new("http://water-lily.co.uk/vouchers/#{@voucher.id}")
+    qrcode = RQRCode::QRCode.new("https://www.water-lily.co.uk/vouchers/#{@voucher.id}")
     @svg = qrcode.as_svg(
       offset: 0,
       color: '000',
