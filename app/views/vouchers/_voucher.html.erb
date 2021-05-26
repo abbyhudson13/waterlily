@@ -1,8 +1,10 @@
 <style>
   @page { size: auto;  margin: 0mm; }
 </style>
-<div class="container d-flex flex-column align-items-center">
-  <%= image_tag "https://res.cloudinary.com/dqlvehu5z/image/upload/v1586180073/waterlily/WATERLILY_logo_No_BG_OL_copy_uaqkxk.png", width: 500 %>
+<div class="container">
+  <div class="wl-logo">
+    <%= image_tag "https://res.cloudinary.com/dqlvehu5z/image/upload/v1586180073/waterlily/WATERLILY_logo_No_BG_OL_copy_uaqkxk.png", width: 500 %>
+  </div>
   <div class="d-flex flex-column align-items-center voucher-main-content">
     <div class="voucher-heading text-center">
       <h1>Gift Voucher:</h1>
@@ -10,18 +12,17 @@
     </div>
     <%= cl_image_tag @voucher.treatment.subcategory.category.photo.key, width: 500, class: "mb-3"%>
     <% if !@voucher.message.nil?%>
-    <h3>Message:</h3>
-    <h3>"<%=@voucher.message%>"</h3>
+      <h2><%=@voucher.message%></h2>
     <% end %>
   </div>
   <div class="voucher-terms w-100">
-    <h6><strong>Description</strong></h6>
+    <h4><strong>Description</strong></h4>
     <% if @subcategory_name == "Vouchers"%>
       <p>This voucher entitles you to a credit of £<%= @voucher.amount_cents / 10000%> to spend on any treatment at Waterlily Tanning & Beauty. </p>
     <% else %>
       <p>This voucher entitles you to the above treatment lasting <%= @voucher.treatment.time %> minutes, or any treatment at Waterlily with the equivalent value.</p>
     <% end %>
-    <h6><strong>Voucher Usage Terms</strong></h6>
+    <h4>Voucher Usage Terms</h4>
     <p>This voucher is valid for 6 months from purchase.</p>
     <p>To book your appointment, please call the salon on 01603 613506 or e-mail indulge@water-lily.co.uk.</p>
     <p>Please bring in this voucher on the day of your treatment.</p>
@@ -31,6 +32,7 @@
     <p>Voucher Code: <%= @voucher.voucher_code %></p>
   </div>
   <div class="wl-address">
-    <p>Waterlily Tanning and Beauty 16 Timberhill, Norwich NR1 3LB </p>
+    <p>Waterlily Tanning and Beauty</p>
+    <p>16 Timberhill, Norwich NR1 3LB</p>
   </div>
 </div>
