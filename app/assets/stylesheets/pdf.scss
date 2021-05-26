@@ -1,0 +1,41 @@
+.voucher-heading{
+  margin-bottom: 10px;
+}
+
+.wl-logo{
+  text-align: center;
+}
+
+.voucher-main-content{
+  border: 1px solid #CDCDCD;
+  padding: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Quicksand", "Helvetica", "sans-serif";
+}
+
+.voucher-details, .voucher-terms{
+    padding: 20px;
+}
+
+.voucher-details{
+  background-color: #E4EBC7;
+  display: -webkit-box;
+  -webkit-box-pack: space-between;
+}
+
+.qr-code{
+  margin-left: 450px;
+}
+
+.wl-address{
+  text-align: center;
+  margin-top: 30px;
+}

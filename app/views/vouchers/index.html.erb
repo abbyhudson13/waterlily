@@ -9,7 +9,7 @@
           <p><%= voucher.treatment.title%></p>
           <p>Purchased <%=voucher.created_at_formatted%></p>
         </div>
-        <%= link_to "View Voucher", voucher_path(voucher.id), class: "waterlily-btn p-2 mr-3", target: :_blank %>
+        <%= link_to "View Voucher", voucher_path(voucher.id, format: :pdf), class: "waterlily-btn p-2 mr-3", target: :_blank %>
           <% if current_user.admin? %>
             <p> Code: <%= voucher.voucher_code%></p>
             <%if voucher.redeemed.nil? || !voucher.redeemed? %>
