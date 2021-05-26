@@ -37,6 +37,7 @@ gem 'stripe_event'
 gem 'coverband'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem "rqrcode", "~> 2.0"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

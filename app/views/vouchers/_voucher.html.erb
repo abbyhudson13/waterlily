@@ -28,11 +28,15 @@
     <p>Please bring in this voucher on the day of your treatment.</p>
   </div>
   <div class="voucher-details w-100">
-    <p>Expires: <%= @voucher.expiry_date_formatted %></p>
-    <p>Voucher Code: <%= @voucher.voucher_code %></p>
+    <div>
+      <p>Expires: <%= @voucher.expiry_date_formatted %></p>
+      <p>Voucher Code: <%= @voucher.voucher_code %></p>
+    </div>
+    <div class="qr-code">
+      <%= @svg.html_safe %>
+    </div>
   </div>
   <div class="wl-address">
-    <p>Waterlily Tanning and Beauty</p>
-    <p>16 Timberhill, Norwich NR1 3LB</p>
+    <p>Waterlily Tanning and Beauty, 16 Timberhill, Norwich NR1 3LB</p>
   </div>
 </div>

@@ -1,5 +1,5 @@
 .voucher-heading{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .wl-logo{
@@ -9,7 +9,7 @@
 .voucher-main-content{
   border: 1px solid #CDCDCD;
   padding: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 5px;
   text-align: center;
 }
@@ -27,6 +27,12 @@
 
 .voucher-details{
   background-color: #E4EBC7;
+  display: -webkit-box;
+  -webkit-box-pack: space-between;
+}
+
+.qr-code{
+  margin-left: 450px;
 }
 
 .wl-address{

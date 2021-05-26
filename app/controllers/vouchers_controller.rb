@@ -40,6 +40,7 @@ class VouchersController < ApplicationController
   def show
     @subcategory_name = @voucher.treatment.subcategory.name
     authorize @voucher
+    generate_qr_code
     respond_to do |format|
       format.html
       format.pdf do
@@ -62,6 +63,7 @@ class VouchersController < ApplicationController
     authorize @voucher
   end
 
+
 private
 
   def voucher_params
@@ -74,5 +76,15 @@ private
 
   def set_voucher
     @voucher = Voucher.find(params[:id])
+  end
+
+  def generate_qr_code
+    qrcode = RQRCode::QRCode.new("http://water-lily.co.uk/vouchers/#{@voucher.id}")
+    @svg = qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 3
+    )
   end
 end

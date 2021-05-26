@@ -70,6 +70,7 @@ GEM
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    chunky_png (1.4.0)
     cloudinary (1.12.0)
       aws_cf_signer
       rest-client
@@ -227,6 +228,10 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rqrcode (2.0.0)
+      chunky_png (~> 1.0)
+      rqrcode_core (~> 1.0)
+    rqrcode_core (1.0.0)
     rspec-core (3.9.2)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.2)
@@ -357,6 +362,7 @@ DEPENDENCIES
   pundit
   rails (~> 5.2.4, >= 5.2.4.1)
   rails-controller-testing (~> 1.0.2)
+  rqrcode (~> 2.0)
   rspec-rails (~> 3.7)
   sass-rails (~> 5.0)
   selenium-webdriver
