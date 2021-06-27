@@ -6,6 +6,14 @@ class Treatment < ApplicationRecord
   validates :title, presence: true
   validates :time, presence: true
   validates :standard_price, presence: true
+
+  scope :active, -> { where(deactivated_at: nil) }
+
+  def deactivate!
+    self.deactivated_at = Time.zone.now
+    save
+  end
+
   def to_label
     if self.special_offer == true
       "#{self.title} - £#{self.offer_price} (was £#{self.standard_price}) "
@@ -13,4 +21,5 @@ class Treatment < ApplicationRecord
     "#{self.title} - £#{self.standard_price}"
     end
   end
+
 end

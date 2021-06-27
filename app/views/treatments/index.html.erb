@@ -7,7 +7,7 @@
       <th>Price</th>
     </thead>
     <tbody>
-      <% @treatments.each do |treatment|%>
+      <% @treatments.active.each do |treatment|%>
         <% unless treatment.subcategory.name == "Vouchers" %>
         <tr>
           <% if !treatment.description == nil?%>
