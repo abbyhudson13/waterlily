@@ -1,3 +1,29 @@
+desc "2021-06-27: Edit description for cosmetics"
+task change_cosmetics_description: :environment do
+  puts "changing description..."
+  cosmetics = Category.where(name: "Cosmetic Treatments").last
+  description = "<p><u><strong>Cosmetic Treatments:</strong></u></p>
+<p>We offer a full range of cosmetic treatments, all by our fully qualified, GMC-registered Doctor, Dr Indira Ekanayake, MBBS, DA.</p>
+<p>We offer a free consultation. Products include:</p>
+<ul>
+    <li>Dermal Fillers</li>
+    <li>Juvederm Vycross range</li>
+    <li>Botox<span>&trade;</span></li>
+    <li>Frown Lines</li>
+    <li>Smile Lines</li>
+    <li>Cheek Volume</li>
+    <li>Lip Enhancements</li>
+</ul>
+<p>Call <a href='tel:01603 613506'>01603 613506</a> for more details or to book a consultation.</p>
+<p><br></p>
+<p><u><strong>Permanent Make-up:</strong></u></p>
+<p><span>Carolyn, a fully qualified Micro-pigmentation artist using BIOTEK products, offers Eyebrow, Lip and Eye Enhancements. Please contact her directly on <a href='tel:07887560732'>07887560732</a> or email <a href='mailto:carolynjaypmu@gmail.com'>carolynjaypmu@gmail.com</a> for more details.</span></p>"
+
+  cosmetics.description = description
+  cosmetics.save!
+
+  puts "Done! 🏁 🏁 🏁"
+end
 
 desc "2021-06-22: Deactivate arasys"
 task deactivate_arasys: :environment do
@@ -10,7 +36,7 @@ task deactivate_arasys: :environment do
   arasys.treatments.each do |treatment|
     treatment.deactivate!
   end
-  
+
   puts "Done! 🏁 🏁 🏁"
 end
 
