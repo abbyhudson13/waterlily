@@ -2,5 +2,10 @@ class Subcategory < ApplicationRecord
   belongs_to :category, dependent: :destroy
   has_many :treatments
 
-  scope :active, -> { deactivated_at: nil) }
+  scope :active, -> { where(deactivated_at: nil) }
+
+  def deactivate!
+    self.deactivated_at = Time.zone.now
+    save
+  end
 end

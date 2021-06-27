@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_27_070707) do
+ActiveRecord::Schema.define(version: 2021_06_27_073843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2021_06_27_070707) do
     t.integer "standard_price_cents", default: 0, null: false
     t.integer "offer_price_cents", default: 0, null: false
     t.boolean "variable_price"
+    t.date "deactivated_at"
     t.index ["category_id"], name: "index_treatments_on_category_id"
   end
 

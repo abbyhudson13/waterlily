@@ -1,4 +1,19 @@
 
+desc "2021-06-22: Deactivate arasys"
+task deactivate_arasys: :environment do
+  puts "deactivating Arasys subcategory..."
+  arasys = Subcategory.where(name: "Arasys").last
+  arasys.deactivate!
+
+  puts "deactivating associated treatments..."
+
+  arasys.treatments.each do |treatment|
+    treatment.deactivate!
+  end
+  
+  puts "Done! 🏁 🏁 🏁"
+end
+
 desc "2021-03-27: Add vouchers for single amounts"
 require "open-uri"
 task add_vouchers: :environment do
