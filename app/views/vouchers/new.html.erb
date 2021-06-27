@@ -7,7 +7,7 @@
         <%= simple_form_for [@voucher], html: { class: "wl_form"} do |f| %>
         <div class="d-flex flex-column align-items-center">
           <%= f.input :treatment_id,
-          collection: Treatment.all %>
+          collection: Treatment.active.all %>
           <%= f.input :message, placeholder: "Write a message for the recipient"%>
           <%= f.submit "Buy Voucher", class: "waterlily-btn p-2" %>
           <% end %>
