@@ -5,4 +5,10 @@ class UserNotifierMailerPreview < ActionMailer::Preview
     @voucher = Voucher.first
     UserNotifierMailer.voucher_purchase_email(@user, @voucher)
   end
+
+  def notify_waterlily_email
+    @user = User.first
+    @voucher = Voucher.first
+    UserNotifierMailer.notify_waterlily_email(@user, @voucher)
+  end
 end

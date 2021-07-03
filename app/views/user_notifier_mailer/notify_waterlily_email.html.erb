@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h1>A new gift voucher has been purchased!</h1>
-    <p> Log into the waterlily admin area to see the voucher</p>
-  </body>
-</html>
+<tr>
+  <td style="padding:30px;background-color:#ffffff;">
+    <h1 style="margin-top:0;margin-bottom:16px;font-size:26px;line-height:32px;font-weight:bold;letter-spacing:-0.02em;">A new voucher has been purchased:</h1>
+    <table>
+      <tr>
+          <td style="padding:40px 30px 30px 30px;text-align:center;font-size:24px;font-weight:bold;">
+            <%= link_to "www.water-lily.co.uk" do %>
+              <%= cl_image_tag @voucher.treatment.subcategory.category.photo.key, style: "width:80%;max-width:500px;height:auto;border:none;text-decoration:none;color:#ffffff;" %>
+            <% end %>
+          </td>
+      </tr>
+    </table>
+    <p style="text-align:center">User: <%= @user.email %></p>
+    <p style="text-align:center"><%= @voucher.treatment_name %></p>
+    <p style="text-align:center">Price: £<%= @voucher.amount_cents / 100 %></p>
+    <br>
+    <div style="text-align:center">
+      <span style="text-align:center;background: #AFB889;padding:8px;border-radius: 5px;"><%= link_to "View Voucher", voucher_url(@voucher.id, format: :pdf), style: "color: white!important;text-decoration:none;" %></span>
+    </div>
+    <br>
+  </td>
+</tr>
