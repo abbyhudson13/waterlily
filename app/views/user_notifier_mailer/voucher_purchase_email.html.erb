@@ -1,13 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h1>Thanks for your gift voucher purchase!</h1>
-    <p>Your voucher is valid for 6 months, and can either be used for the treatment specified, or any treatment with the same value</p>
-    <p>Follow <a href="https://www.water-lily.co.uk/vouchers">this link</a> to view your voucher:</p>
+<tr>
+  <td style="padding:30px;background-color:#ffffff;">
+    <h1 style="margin-top:0;margin-bottom:16px;font-size:26px;line-height:32px;font-weight:bold;letter-spacing:-0.02em;">Thank you for your gift voucher purchase!</h1>
+    <p style="margin:0;">You have purchased the following voucher:</p>
+    <table>
+      <tr>
+          <td style="padding:40px 30px 30px 30px;text-align:center;font-size:24px;font-weight:bold;">
+            <%= link_to "www.water-lily.co.uk" do %>
+              <%= cl_image_tag @voucher.treatment.subcategory.category.photo.key, style: "width:80%;max-width:500px;height:auto;border:none;text-decoration:none;color:#ffffff;" %>
+            <% end %>
+          </td>
+      </tr>
+    </table>
+    <p style="text-align:center"><%= @voucher.treatment_name %></p>
+    <p style="text-align:center">Price: £<%= @voucher.amount_cents / 100 %></p>
+    <p>You can view the voucher via our website, and either print it out or send it via e-mail.</p>
     <br>
-    <p>Your Waterlily Team</p>
-  </body>
-</html>
+    <div style="text-align:center">
+      <span style="text-align:center;background: #AFB889;padding:8px;border-radius: 5px;"><%= link_to "View Voucher", voucher_url(@voucher.id, format: :pdf), style: "color: white!important;text-decoration:none;" %></span>
+    </div>
+    <br>
+    <p style="text-align:center;"></p>
+    <p>If you have any further questions, do not hesitate to contact us.</p>
+  </td>
+</tr>

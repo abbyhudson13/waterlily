@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <title></title>
     <style>
-      /* Email styles need to be inline */
+        table, td, div, h1, p {
+            font-family: Quicksand, Helvetica, sans-serif;
+        }
     </style>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+</head>
+<body style="margin:0;padding:0;word-spacing:normal;background-color:#343a40;">
+    <div role="article" aria-roledescription="email" lang="en" style="text-size-adjust:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#343a40;">
+      <table role="presentation" style="width:100%;border:none;border-spacing:0;">
+        <tr>
+            <td align="center" style="padding:0;">
+              <table role="presentation" style="width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:Arial,sans-serif;font-size:16px;line-height:22px;color:#363636;">
+                <%= render partial: "user_notifier_mailer/shared/header" %>
+                <%= yield %>
+                <%= render partial: "user_notifier_mailer/shared/footer" %>
+              </table>
+            </td>
+        </tr>
+      </table>
+    </div>
+</body>
 </html>
