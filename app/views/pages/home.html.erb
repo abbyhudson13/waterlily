@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="home-categories text-center d-flex flex-column">
-    <h2 class="section-title">OUR SERVICES</h2>
+    <h2 class="section-title">Our Services</h2>
     <hr/>
     <div class="row justify-content-center home-card-container">
       <% @categories.each do |category|%>
@@ -54,7 +54,7 @@
     <hr/>
   </div>
   <div class="about-us d-flex flex-column align-items-center mt-20">
-    <h2 class="section-title">ABOUT US</h2>
+    <h2 class="section-title">About Us</h2>
     <hr/>
     <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1589706104/WhatsApp_Image_2020-05-08_at_16.15.02_j31vjz.jpg",
     class: "col-lg-6 col-md-8 col-sm-11", crop: :fill) %>
@@ -67,7 +67,7 @@
     <hr/>
   </div>
   <div class="special-offers-home d-flex flex-column align-items-center mt-20">
-    <h2 class="section-title">SPECIAL OFFERS</h2>
+    <h2 class="section-title">Special Offers</h2>
     <hr/>
     <div class="row justify-content-around">
       <% @special_offers.sample(6).each do |offer|%>
