@@ -1,7 +1,6 @@
 .wl-card {
   border-radius: 5px;
   color: #343a40;
-  border: 1px solid #CDCDCD;
   &:hover {
     color: #A8A8A8;
     transition: 0.4s;
@@ -19,6 +18,12 @@
     transition: 0.4s;
     transform: scale(1.03);
   }
+}
+
+.wl-card-title {
+  border: 1px solid #CDCDCD;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .card-photo {

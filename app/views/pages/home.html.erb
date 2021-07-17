@@ -43,7 +43,7 @@
           <% if category.photo.attached?%>
           <%= cl_image_tag category.photo.key, width: 300, height: 200, class: "card-photo"%>
           <% end %>
-          <div class="pt-2 pb-2">
+          <div class="wl-card-title pt-2 pb-2">
             <%= category.name %>
           </div>
         </div>
