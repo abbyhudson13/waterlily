@@ -1,5 +1,4 @@
 .wl-card {
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
   border-radius: 5px;
   color: #343a40;
   &:hover {
@@ -21,6 +20,12 @@
   }
 }
 
+.wl-card-title {
+  border: 1px solid #CDCDCD;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
 .card-photo {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
@@ -35,7 +40,6 @@
   align-content: center;
   img {
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
   }
 }
 

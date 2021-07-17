@@ -36,9 +36,13 @@ hr{
 #shop-photo {
   width: 40%;
 }
+
+.booking-link{
+  border: 1px solid #CDCDCD !important;
+}
+
 .about-text, .booking-link{
   background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
   border-radius: 5px;
   p{
     margin: 0px;
