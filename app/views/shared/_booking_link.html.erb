@@ -1,4 +1,7 @@
 <div class="booking-link text-center mt-5 mb-5">
   <p>Would you like to book?</p>
-  <%= link_to "Contact Us", contacts_new_path , class: "btn waterlily-btn mb-3" %>
+  <div class="d-flex flex-column mr-5 ml-5">
+    <%= link_to "Contact Us", contacts_new_path , class: "btn waterlily-btn mb-3" %>
+    <%= link_to "Buy Voucher", new_voucher_path , class: "btn waterlily-btn mb-3" %>
+  </div>
 </div>
