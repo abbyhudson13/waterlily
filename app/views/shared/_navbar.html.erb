@@ -41,7 +41,9 @@
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "All Treatments", treatments_path , class: "dropdown-item" %>
           <% @categories.each do |category| %>
-          <%= link_to category.name, category_path(category.id), class: "dropdown-item" %>
+            <% unless category.name == "Vouchers" %>
+              <%= link_to category.name, category_path(category.id), class: "dropdown-item" %>
+            <% end %>
           <% end %>
         </div>
       </li>
