@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-before_action :set_categories, :set_offers
+  before_action :set_categories, :set_offers
   def set_categories
     @categories = Category.where.not(name: "Vouchers")
   end

@@ -1,6 +1,6 @@
 class TreatmentsController < ApplicationController
-before_action :set_treatment, only: [:edit, :update, :destroy]
-before_action :set_categories
+  before_action :set_treatment, only: [:edit, :update, :destroy]
+  before_action :set_categories
   def index
     if params[:query].present?
       sql_query = " \
@@ -50,7 +50,8 @@ before_action :set_categories
     authorize @treatment
   end
 
-private
+  private
+
   def set_treatment
     @treatment = Treatment.find(params[:id])
   end
@@ -62,5 +63,4 @@ private
   def set_categories
     @categories = Category.all
   end
-
 end

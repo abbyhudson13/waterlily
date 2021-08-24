@@ -12,18 +12,18 @@ class VouchersController < ApplicationController
     @user = current_user
     treatment = Treatment.find(params[:voucher][:treatment_id])
     message = params[:voucher][:message]
-    letters = (0..9).to_a + ('a'..'z').to_a + ('A'..'Z').to_a
+    letters = (0..9).to_a + ("a".."z").to_a + ("A".."Z").to_a
     voucher_code = Date.today.strftime("%Y%m") + letters.sample(8).join
     expiry_date = (Date.today + 6.months)
-        price = treatment.special_offer? ? treatment.offer_price_cents : treatment.standard_price_cents
-    @voucher  = Voucher.create!(treatment: treatment, treatment_name: treatment.title, amount: price, state: 'pending', user: current_user, message: message, voucher_code: voucher_code, expiry_date: expiry_date)
+    price = treatment.special_offer? ? treatment.offer_price_cents : treatment.standard_price_cents
+    @voucher = Voucher.create!(treatment: treatment, treatment_name: treatment.title, amount: price, state: "pending", user: current_user, message: message, voucher_code: voucher_code, expiry_date: expiry_date)
     authorize @voucher
     session = Stripe::Checkout::Session.create(
-      payment_method_types: ['card'],
+      payment_method_types: ["card"],
       line_items: [{
         name: treatment.title,
         amount: price,
-        currency: 'gbp',
+        currency: "gbp",
         quantity: 1
       }],
       success_url: vouchers_url,
@@ -44,7 +44,7 @@ class VouchersController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "show", template: 'vouchers/show.html.erb', layout: "pdf.html.erb"
+        render pdf: "show", template: "vouchers/show.html.erb", layout: "pdf.html.erb"
       end
     end
   end
@@ -63,8 +63,7 @@ class VouchersController < ApplicationController
     authorize @voucher
   end
 
-
-private
+  private
 
   def voucher_params
     params.require(:voucher).permit(:price, :voucher_code, :expiry_date, :redeemed, :treatment_id)
@@ -82,8 +81,8 @@ private
     qrcode = RQRCode::QRCode.new("https://www.water-lily.co.uk/vouchers/#{@voucher.id}")
     @svg = qrcode.as_svg(
       offset: 0,
-      color: '000',
-      shape_rendering: 'crispEdges',
+      color: "000",
+      shape_rendering: "crispEdges",
       module_size: 3
     )
   end
