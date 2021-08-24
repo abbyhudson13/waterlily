@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'contacts/new'
   get 'offers', to: 'pages#offers'
   get 'dashboard', to: 'pages#dashboard'
-  resources :categories, only: [:new, :create, :index, :edit, :update, :show]
+  resources :categories, only: [:new, :create, :index, :edit, :update, :show], param: :title
   resources :subcategories, only: [:new, :create, :index, :edit, :update]
   resources :treatments, only: [:new, :create, :index, :edit, :update, :destroy]
   resources :contacts, only: [:new, :create]

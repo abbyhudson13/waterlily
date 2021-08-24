@@ -1,3 +1,17 @@
+desc "2021-08-24: Use standard category names"
+task standardize_category_names: :environment do
+  puts "renaming categories..."
+  categories = Category.all
+  categories.each do |category|
+    category_name = category.name
+    category.name = category_name.downcase.split.join("_")
+    category.save!
+    puts "."
+  end
+
+  puts "Done! 🏁 🏁 🏁"
+end
+
 desc "2021-06-27: Edit description for cosmetics"
 task change_cosmetics_description: :environment do
   puts "changing description..."
