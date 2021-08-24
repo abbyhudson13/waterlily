@@ -4,89 +4,88 @@ Subcategory.destroy_all
 Treatment.destroy_all
 
 puts "deleting seeds"
-#tanning
-file = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276135/waterlily/tanning.jpg')
+# tanning
+file = URI.open("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276135/waterlily/tanning.jpg")
 tanning = Category.create(
   name: "Tanning",
   description: "Single sessions range from 2-14 minutes. To build a gradual base tan we recommend 2-3 sessions per week over a 4-6 week period, to enable your skin to develop a natural tan without over-exposure. We pride ourselves on our professional advice and guidance when using tanning equipment."
 )
 
-tanning.photo.attach(io:file, filename:'tanning.jpg', content_type: 'image/jpg')
+tanning.photo.attach(io: file, filename: "tanning.jpg", content_type: "image/jpg")
 
-#massage
-file1 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586180075/waterlily/massage.jpg')
+# massage
+file1 = URI.open("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586180075/waterlily/massage.jpg")
 massage = Category.create(
   name: "Massage",
   description: "Indulge your senses with a relaxing massage. The effective and enjoyable way to improve skin health, texture and circulation whilst relieving stress and tension."
 )
 
-massage.photo.attach(io:file1, filename:'massage.jpg', content_type: 'image/jpg')
+massage.photo.attach(io: file1, filename: "massage.jpg", content_type: "image/jpg")
 
-#hands, feet, nails
+# hands, feet, nails
 
-file2 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276329/waterlily/nails.jpg')
+file2 = URI.open("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276329/waterlily/nails.jpg")
 handsfeetnails = Category.create(
   name: "Hands, Feet & Nails",
   description: "Show off your nails and be kind to your feet. We specialize in Shellac overlays and have a wide range of colours and effects to choose from."
 )
 
-handsfeetnails.photo.attach(io:file2, filename:'nails.jpg', content_type: 'image/jpg')
+handsfeetnails.photo.attach(io: file2, filename: "nails.jpg", content_type: "image/jpg")
 
-#waxing
+# waxing
 
-file3 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276140/waterlily/waxing.jpg')
+file3 = URI.open("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276140/waterlily/waxing.jpg")
 waxing = Category.create(
   name: "Waxing",
   description: "Feel more confident with smooth, hair-free skin."
 )
 
-waxing.photo.attach(io:file3, filename:'waxing.jpg', content_type: 'image/jpg')
+waxing.photo.attach(io: file3, filename: "waxing.jpg", content_type: "image/jpg")
 
-#facials
+# facials
 
-file4 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276319/waterlily/facial.jpg')
+file4 = URI.open("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276319/waterlily/facial.jpg")
 facials = Category.create(
   name: "Facials",
   description: "Rejuvenate your skin with a relaxing facial."
 )
 
-facials.photo.attach(io:file4, filename:'facials.jpg', content_type: 'image/jpg')
+facials.photo.attach(io: file4, filename: "facials.jpg", content_type: "image/jpg")
 
-#tinting and perming
+# tinting and perming
 
-file6 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586339320/waterlily/eyebrow.jpg')
+file6 = URI.open("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586339320/waterlily/eyebrow.jpg")
 tintingperming = Category.create(
   name: "Tinting & Perming",
   description: "Make your eyes stand out with our range of tinting and perming for eyelashes and eyebrows. Please note that a patch test is required at least 24 hours prior to tinting and perming"
 )
 
-tintingperming.photo.attach(io:file6, filename:'tintingperming.jpg', content_type: 'image/jpg')
+tintingperming.photo.attach(io: file6, filename: "tintingperming.jpg", content_type: "image/jpg")
 
-#Body Contour
+# Body Contour
 
-file5 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276315/waterlily/contour.jpg')
+file5 = URI.open("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276315/waterlily/contour.jpg")
 bodycontour = Category.create(
   name: "Body Contour",
   description: "We offer services to help tone the body and reduce cellulite."
 )
 
-bodycontour.photo.attach(io:file5, filename:'bodycontour.jpg', content_type: 'image/jpg')
+bodycontour.photo.attach(io: file5, filename: "bodycontour.jpg", content_type: "image/jpg")
 
+# nationalcosmeticclinic
 
-#nationalcosmeticclinic
-
-file7 = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586340050/waterlily/botox.jpg')
+file7 = URI.open("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586340050/waterlily/botox.jpg")
 cosmeticcenters = Category.create(
   name: "Cosmetic Treatments",
   description: "We offer a wide range of non-surgical cosmetic treatments, aimed to help you feel more confident. Please contact us for a consultation."
 )
 
-cosmeticcenters.photo.attach(io:file7, filename:'cosmetic.jpg', content_type: 'image/jpg')
+cosmeticcenters.photo.attach(io: file7, filename: "cosmetic.jpg", content_type: "image/jpg")
 puts "completed categories"
 
-#Subcategories
+# Subcategories
 
-#thaimassage
+# thaimassage
 thaimassage = Subcategory.create(
   name: "Thai Massage",
   description: "Thai Massage with Onsri",
@@ -134,7 +133,7 @@ thaifoot = Treatment.create(
   standard_price_cents: 2500
 )
 
-#deeptissuemassage
+# deeptissuemassage
 deeptissuemassage = Subcategory.create(
   name: "Deep Tissue Massage",
   description: "Deep Tissue Massage with Onsri",
@@ -165,7 +164,7 @@ deeptissueninety = Treatment.create(
   standard_price_cents: 5500
 )
 
-#swedish massage
+# swedish massage
 swedish = Subcategory.create(
   name: "Swedish",
   description: "Deep Tissue Massage",
@@ -189,14 +188,13 @@ swedishbackneckshoulder = Treatment.create(
 
 swedishfullbody = Treatment.create(
   title: "Swedish Full Body Massage",
-  time:60,
+  time: 60,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Swedish").id,
   standard_price_cents: 4000
 )
 
-
-#aromatherapy massage
+# aromatherapy massage
 aromatherapy = Subcategory.create(
   name: "Aromatherapy",
   description: "Relaxation Massage using essential oils",
@@ -219,7 +217,7 @@ aromatherapyfullbody = Treatment.create(
   standard_price_cents: 4200
 )
 
-#hotstone massage
+# hotstone massage
 hotstone = Subcategory.create(
   name: "Hot Stone",
   description: "Soothing massage using hot volcanic stones",
@@ -242,14 +240,12 @@ hotstonefullbody = Treatment.create(
   standard_price_cents: 4500
 )
 
-#bodyscrub
+# bodyscrub
 bodyscrub = Subcategory.create(
   name: "Body Exfoliation",
   description: "Full body exfoliation using a scrub to leave your skin feeling soft",
   category_id: Category.find_by_name("Massage").id
 )
-
-
 
 fullbodyscrub = Treatment.create(
   title: "Full Body Scrub",
@@ -259,7 +255,7 @@ fullbodyscrub = Treatment.create(
   standard_price_cents: 3000
 )
 
-#prenatal massage
+# prenatal massage
 prenatal = Subcategory.create(
   name: "Prenatal Massage",
   description: "A massage designed especially for pregnancy",
@@ -282,7 +278,7 @@ prenatalsixty = Treatment.create(
   standard_price_cents: 4000
 )
 
-#packages
+# packages
 packages1 = Subcategory.create(
   name: "Massage Packages",
   description: "Value Packages",
@@ -315,14 +311,13 @@ mensonly = Treatment.create(
   standard_price_cents: 5000
 )
 
-
-#tanning
+# tanning
 verticaltanning = Subcategory.create(
   name: "Vertical Tanning",
   description: "We pride ourselves on our professional advice and guidance when using the tanning sunbeds. To maintain a healthy tan using a sunbed, usually 1-2 sessions are suffice.",
   category_id: Category.find_by_name("Tanning").id
 )
-singlesessiontanning= Treatment.create(
+singlesessiontanning = Treatment.create(
   title: "Tanning- Single Session per minute",
   time: 1,
   special_offer: false,
@@ -330,7 +325,7 @@ singlesessiontanning= Treatment.create(
   standard_price_cents: 90
 )
 
-thirtytanning= Treatment.create(
+thirtytanning = Treatment.create(
   title: "Tanning- 30 minute course",
   time: 30,
   special_offer: false,
@@ -338,7 +333,7 @@ thirtytanning= Treatment.create(
   standard_price_cents: 2300
 )
 
-sixtytanning= Treatment.create(
+sixtytanning = Treatment.create(
   title: "Tanning- 60 minute course",
   time: 60,
   special_offer: false,
@@ -346,7 +341,7 @@ sixtytanning= Treatment.create(
   standard_price_cents: 3500
 )
 
-ninetytanning= Treatment.create(
+ninetytanning = Treatment.create(
   title: "Tanning- 90 minute course",
   time: 90,
   special_offer: false,
@@ -354,7 +349,7 @@ ninetytanning= Treatment.create(
   standard_price_cents: 4500
 )
 
-onetwentytanning= Treatment.create(
+onetwentytanning = Treatment.create(
   title: "Tanning- 120 minute course",
   time: 120,
   special_offer: true,
@@ -363,7 +358,7 @@ onetwentytanning= Treatment.create(
   standard_price_cents: 5500
 )
 
-#manicures
+# manicures
 manicures = Subcategory.create(
   name: "Manicures",
   description: "Look after your hands and nails",
@@ -396,7 +391,6 @@ standardmanicure = Treatment.create(
   standard_price_cents: 3000
 )
 
-
 luxurymanicure = Treatment.create(
   title: "Luxury Manicure",
   description: "A special occassion treatment. Includes Paraffin wax treatment for dry skin, soak, file, cuticle tidy, hand & arm massage and nail polish",
@@ -415,7 +409,7 @@ menshandgroom = Treatment.create(
   standard_price_cents: 2500
 )
 
-#shellac
+# shellac
 shellac = Subcategory.create(
   name: "Shellac/ Gellux Overlays",
   description: "On like a polish, wears like a gel. For your finger or toe nails",
@@ -450,8 +444,7 @@ shellacsoakoff = Treatment.create(
   standard_price_cents: 2000
 )
 
-
-#pedicures
+# pedicures
 pedicures = Subcategory.create(
   name: "Pedicures",
   description: "Give your feet and toe nails the care they deserve",
@@ -501,7 +494,7 @@ mensfootgroom = Treatment.create(
   standard_price_cents: 3000
 )
 
-#packages
+# packages
 packages2 = Subcategory.create(
   name: "Manicure & Pedicure Packages",
   description: "Value Packages",
@@ -514,7 +507,7 @@ standardpamperpackage = Treatment.create(
   time: 180,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Manicure & Pedicure Packages").id,
-  standard_price_cents: 8000,
+  standard_price_cents: 8000
 )
 
 luxurypamperpackage = Treatment.create(
@@ -534,7 +527,7 @@ mensonly2 = Treatment.create(
   standard_price_cents: 5000
 )
 
-#facials
+# facials
 facials2 = Subcategory.create(
   name: "Facials",
   description: "Leave your skin feeling smooth and fresh",
@@ -546,7 +539,7 @@ minifacial = Treatment.create(
   time: 30,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Facials").id,
-  standard_price_cents: 2700,
+  standard_price_cents: 2700
 )
 classicfacial = Treatment.create(
   title: "Classic Facial",
@@ -554,7 +547,7 @@ classicfacial = Treatment.create(
   time: 60,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Facials").id,
-  standard_price_cents: 3500,
+  standard_price_cents: 3500
 )
 
 luxuryfacial = Treatment.create(
@@ -563,7 +556,7 @@ luxuryfacial = Treatment.create(
   time: 75,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Facials").id,
-  standard_price_cents: 4000,
+  standard_price_cents: 4000
 )
 mensfacial = Treatment.create(
   title: "Mens Facial",
@@ -571,9 +564,8 @@ mensfacial = Treatment.create(
   time: 30,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Facials").id,
-  standard_price_cents: 2000,
+  standard_price_cents: 2000
 )
-
 
 packages3 = Subcategory.create(
   name: "Packages with Facials",
@@ -587,7 +579,7 @@ standardpamperpackage2 = Treatment.create(
   time: 120,
   special_offer: false,
   subcategory_id: Subcategory.find_by_name("Packages with Facials").id,
-  standard_price_cents: 8000,
+  standard_price_cents: 8000
 )
 
 luxurypamperpackage2 = Treatment.create(
@@ -617,7 +609,7 @@ mensonly3 = Treatment.create(
   standard_price_cents: 5000
 )
 
-#facewaxing
+# facewaxing
 face = Subcategory.create(
   name: "Face Waxing",
   description: "Using a gentle creme for sensitive skin",
@@ -649,7 +641,6 @@ menseyebrow = Treatment.create(
   standard_price_cents: 1000
 )
 
-
 upperliporchin = Treatment.create(
   title: "Upper Lip or Chin Wax/Thread",
   time: 15,
@@ -666,9 +657,7 @@ upperlipandchin = Treatment.create(
   standard_price_cents: 1300
 )
 
-
-
-#bodywaxing
+# bodywaxing
 body = Subcategory.create(
   name: "Body Waxing",
   description: "Hair removal using a gentle creme for sensitive skin",
@@ -747,13 +736,13 @@ menschest = Treatment.create(
   standard_price_cents: 2500
 )
 
-#arasys
+# arasys
 arasys = Subcategory.create(
   name: "Arasys",
   description: "Each 17 minute session is equivalent to 250 sit-ups or 300 buttock raises. Widely known as the best faradic system",
   category_id: Category.find_by_name("Body Contour").id
 )
-singlesessionarasys= Treatment.create(
+singlesessionarasys = Treatment.create(
   title: "Arasys- Single Session",
   time: 17,
   description: "Each 17 minute session is equivalent to 250 sit-ups or 300 buttock raises. Widely known as the best faradic system",
@@ -761,7 +750,7 @@ singlesessionarasys= Treatment.create(
   subcategory_id: Subcategory.find_by_name("Arasys").id,
   standard_price_cents: 2000
 )
-coursearasys= Treatment.create(
+coursearasys = Treatment.create(
   title: "Arasys- Course of 10",
   time: 1700,
   description: "Each 17 minute session is equivalent to 250 sit-ups or 300 buttock raises. Widely known as the best faradic system",
@@ -770,16 +759,14 @@ coursearasys= Treatment.create(
   standard_price_cents: 15000
 )
 
-
-
-#xfit
+# xfit
 xfit = Subcategory.create(
   name: "X-Fit Vibration Plate",
   description: "10 minutes on the X Fit burns fat, helps you lose weight, reduces cellulite, increases circulation and builds muscle tone.",
   category_id: Category.find_by_name("Body Contour").id
 )
 
-singlesessionxfit= Treatment.create(
+singlesessionxfit = Treatment.create(
   title: "X-Fit- 10 Minute Session",
   time: 10,
   description: "10 minute session burns fat, helps you lose weight, reduces cellulite, increases circulation and builds muscle tone.",
@@ -788,7 +775,7 @@ singlesessionxfit= Treatment.create(
   standard_price_cents: 400
 )
 
-tencoursexfit= Treatment.create(
+tencoursexfit = Treatment.create(
   title: "X-Fit- Course of 10",
   time: 1000,
   description: "10 minute session burns fat, helps you lose weight, reduces cellulite, increases circulation and builds muscle tone.",
@@ -796,7 +783,7 @@ tencoursexfit= Treatment.create(
   subcategory_id: Subcategory.find_by_name("X-Fit Vibration Plate").id,
   standard_price_cents: 3500
 )
-twentycoursexfit= Treatment.create(
+twentycoursexfit = Treatment.create(
   title: "X-Fit- Course of 20",
   time: 2000,
   description: "10 minute session burns fat, helps you lose weight, reduces cellulite, increases circulation and builds muscle tone.",
@@ -805,8 +792,7 @@ twentycoursexfit= Treatment.create(
   standard_price_cents: 3500
 )
 
-
-#tintingperming
+# tintingperming
 tintingperming2 = Subcategory.create(
   name: "Tinting & Perming",
   description: "Please note that a patch test is required at least 24 hours prior to tinting and perming",
@@ -852,15 +838,11 @@ lashpermingandtint = Treatment.create(
   standard_price_cents: 3500
 )
 
-
-
-#cosmetic
+# cosmetic
 cosmetic = Subcategory.create(
   name: "Cosmetic Treatments",
   description: "Please contact us for a consulation",
   category_id: Category.find_by_name("Cosmetic Treatments").id
 )
-
-
 
 puts "Completed subcategory"

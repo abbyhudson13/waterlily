@@ -5,10 +5,10 @@ class Voucher < ApplicationRecord
   validates :treatment_id, presence: true
 
   def created_at_formatted
-    created_at.strftime('%d %b %Y')
+    created_at.strftime("%d %b %Y")
   end
 
   def expiry_date_formatted
-    expiry_date.strftime('%d %b %Y')
+    expiry_date.strftime("%d %b %Y")
   end
 end

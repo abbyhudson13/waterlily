@@ -7,11 +7,11 @@ class VoucherPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    true
   end
 
   def new?
-    return true
+    true
   end
 
   def edit?
@@ -35,5 +35,4 @@ class VoucherPolicy < ApplicationPolicy
       end
     end
   end
-
 end

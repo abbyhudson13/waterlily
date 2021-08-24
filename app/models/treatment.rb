@@ -15,11 +15,10 @@ class Treatment < ApplicationRecord
   end
 
   def to_label
-    if self.special_offer == true
-      "#{self.title} - £#{self.offer_price} (was £#{self.standard_price}) "
+    if special_offer == true
+      "#{title} - £#{offer_price} (was £#{standard_price}) "
     else
-    "#{self.title} - £#{self.standard_price}"
+      "#{title} - £#{standard_price}"
     end
   end
-
 end

@@ -8,6 +8,6 @@ class Category < ApplicationRecord
   end
 
   def public_name
-    name.split("_").map(&:capitalize).join(' ')
+    name.split("_").map(&:capitalize).join(" ")
   end
 end
