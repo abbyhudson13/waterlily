@@ -62,7 +62,7 @@ task add_vouchers: :environment do
   voucher_category.photo.attach(io: file, filename: "tanning.jpg", content_type: "image/jpg")
   voucher_subcat = Subcategory.create!(name: "Vouchers", category_id: voucher_category.id)
   (5..50).step(5) do |amount|
-    voucher = Treatment.create!(
+    Treatment.create!(
       title: "£#{amount} Voucher",
       standard_price_cents: (amount.to_i * 100),
       special_offer: false,
