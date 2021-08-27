@@ -86,13 +86,13 @@ puts "completed categories"
 # Subcategories
 
 # thaimassage
-thaimassage = Subcategory.create(
+Subcategory.create(
   name: "Thai Massage",
   description: "Thai Massage with Onsri",
   category_id: Category.find_by_name("Massage").id
 )
 
-thai30min = Treatment.create(
+Treatment.create(
   title: "30 Minute Thai Massage",
   time: 30,
   special_offer: false,
@@ -100,7 +100,7 @@ thai30min = Treatment.create(
   standard_price_cents: 3000
 )
 
-thai60min = Treatment.create(
+Treatment.create(
   title: "60 Minute Thai Massage",
   time: 60,
   special_offer: false,
@@ -108,7 +108,7 @@ thai60min = Treatment.create(
   standard_price_cents: 4500
 )
 
-thai90min = Treatment.create(
+Treatment.create(
   title: "90 Minute Thai Massage",
   time: 90,
   special_offer: false,
@@ -116,7 +116,7 @@ thai90min = Treatment.create(
   standard_price_cents: 6500
 )
 
-thaihead = Treatment.create(
+Treatment.create(
   title: "Thai Head Massage",
   time: 30,
   special_offer: false,
@@ -124,7 +124,7 @@ thaihead = Treatment.create(
   standard_price_cents: 2500
 )
 
-thaifoot = Treatment.create(
+Treatment.create(
   title: "Thai Foot Massage",
   time: 30,
   special_offer: true,
@@ -134,13 +134,13 @@ thaifoot = Treatment.create(
 )
 
 # deeptissuemassage
-deeptissuemassage = Subcategory.create(
+Subcategory.create(
   name: "Deep Tissue Massage",
   description: "Deep Tissue Massage with Onsri",
   category_id: Category.find_by_name("Massage").id
 )
 
-deeptissuethirty = Treatment.create(
+Treatment.create(
   title: "30 Minute Deep Tissue Massage",
   time: 30,
   special_offer: false,
@@ -148,7 +148,7 @@ deeptissuethirty = Treatment.create(
   standard_price_cents: 3000
 )
 
-deeptissuesixty = Treatment.create(
+Treatment.create(
   title: "60 Minute Deep Tissue Massage",
   time: 60,
   special_offer: false,
@@ -156,7 +156,7 @@ deeptissuesixty = Treatment.create(
   standard_price_cents: 4000
 )
 
-deeptissueninety = Treatment.create(
+Treatment.create(
   title: "90 Minute Deep Tissue Massage",
   time: 90,
   special_offer: false,
@@ -165,12 +165,13 @@ deeptissueninety = Treatment.create(
 )
 
 # swedish massage
-swedish = Subcategory.create(
+Subcategory.create(
   name: "Swedish",
   description: "Deep Tissue Massage",
   category_id: Category.find_by_name("Massage").id
 )
-swedishback = Treatment.create(
+
+Treatment.create(
   title: "Swedish Back Massage",
   time: 30,
   special_offer: false,
@@ -178,7 +179,7 @@ swedishback = Treatment.create(
   standard_price_cents: 3000
 )
 
-swedishbackneckshoulder = Treatment.create(
+Treatment.create(
   title: "Swedish Back, Neck & Shoulder Massage",
   time: 45,
   special_offer: false,
@@ -186,7 +187,7 @@ swedishbackneckshoulder = Treatment.create(
   standard_price_cents: 3500
 )
 
-swedishfullbody = Treatment.create(
+Treatment.create(
   title: "Swedish Full Body Massage",
   time: 60,
   special_offer: false,
