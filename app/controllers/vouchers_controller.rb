@@ -9,14 +9,14 @@ class VouchersController < ApplicationController
   end
 
   def create
-    @user = current_user
-    treatment = Treatment.find(params[:voucher][:treatment_id])
-    message = params[:voucher][:message]
-    letters = (0..9).to_a + ('a'..'z').to_a + ('A'..'Z').to_a
-    voucher_code = Date.today.strftime("%Y%m") + letters.sample(8).join
-    expiry_date = (Date.today + 6.months)
-        price = treatment.special_offer? ? treatment.offer_price_cents : treatment.standard_price_cents
-    @voucher  = Voucher.create!(treatment: treatment, treatment_name: treatment.title, amount: price, state: 'pending', user: current_user, message: message, voucher_code: voucher_code, expiry_date: expiry_date)
+    @voucher  = Voucher.create!(treatment: treatment,
+      treatment_name: treatment.title,
+      amount: price,
+      state: 'pending',
+      user: current_user,
+      message: message,
+      voucher_code: voucher_code,
+      expiry_date: Date.today + 6.months)
     authorize @voucher
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -71,11 +71,29 @@ private
   end
 
   def set_categories
-    @categories = Category.all
+    @categories ||= Category.all
   end
 
   def set_voucher
-    @voucher = Voucher.find(params[:id])
+    @voucher ||= Voucher.find(params[:id])
+  end
+
+  def treatment
+    @treatment ||= Treatment.find(params[:voucher][:treatment_id])
+  end
+
+  def price
+    treatment.special_offer? ? treatment.offer_price_cents : treatment.standard_price_cents
+  end
+
+  def message
+    @message ||= params[:voucher][:message]
+  end
+
+  def voucher_code
+    letters = (0..9).to_a + ('a'..'z').to_a + ('A'..'Z').to_a
+    voucher_code = Date.today.strftime("%Y%m") + letters.sample(8).join
+    voucher_code
   end
 
   def generate_qr_code
