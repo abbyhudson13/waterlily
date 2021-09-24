@@ -1,3 +1,17 @@
+desc "2021-08-24: Use standard category names"
+task standardize_category_names: :environment do
+  puts "renaming categories..."
+  categories = Category.all
+  categories.each do |category|
+    category_name = category.name
+    category.name = category_name.downcase.split.join("_")
+    category.save!
+    puts "."
+  end
+
+  puts "Done! 🏁 🏁 🏁"
+end
+
 desc "2021-06-27: Edit description for cosmetics"
 task change_cosmetics_description: :environment do
   puts "changing description..."
@@ -43,18 +57,18 @@ end
 desc "2021-03-27: Add vouchers for single amounts"
 require "open-uri"
 task add_vouchers: :environment do
-  file = URI.open('https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276135/waterlily/tanning.jpg')
+  file = URI.open("https://res.cloudinary.com/dqlvehu5z/image/upload/v1586276135/waterlily/tanning.jpg")
   voucher_category = Category.create!(name: "Vouchers")
-  voucher_category.photo.attach(io:file, filename:'tanning.jpg', content_type: 'image/jpg')
+  voucher_category.photo.attach(io: file, filename: "tanning.jpg", content_type: "image/jpg")
   voucher_subcat = Subcategory.create!(name: "Vouchers", category_id: voucher_category.id)
   (5..50).step(5) do |amount|
-    voucher = Treatment.create!(
-        title: "£#{amount} Voucher",
-        standard_price_cents: (amount.to_i * 100),
-        special_offer: false,
-        subcategory_id: voucher_subcat.id,
-        time: 0
-      )
+    Treatment.create!(
+      title: "£#{amount} Voucher",
+      standard_price_cents: (amount.to_i * 100),
+      special_offer: false,
+      subcategory_id: voucher_subcat.id,
+      time: 0
+    )
   end
   puts "Done! 🏁 🏁 🏁"
 end

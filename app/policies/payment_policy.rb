@@ -7,11 +7,11 @@ class PaymentPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    true
   end
 
   def new?
-    return true
+    true
   end
 
   def show?

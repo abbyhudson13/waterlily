@@ -44,7 +44,7 @@
           <%= cl_image_tag category.photo.key, width: 300, height: 200, class: "card-photo"%>
           <% end %>
           <div class="wl-card-title pt-2 pb-2">
-            <%= category.name %>
+            <%= category.public_name %>
           </div>
         </div>
       </div>
@@ -91,6 +91,20 @@
         <% end %>
       </div>
       <%= render "./shared/booking_link" %>
+    </div>
+    <div class="about-us d-flex flex-column align-items-center mt-20">
+      <h2 class="section-title">Gift Vouchers</h2>
+      <hr/>
+      <div class="about-text text-center col-lg-8 col-md-8 col-sm-10">
+        <p>The perfect gift- treat yourself or a loved one to one of our vouchers. You can either buy a specific treatment or a voucher with monetary value, with the option to add a personal message.</p>
+        <p>The voucher will be e-mailed to you, and you can either print it or download it. It will be valid for 6 months after purchase.</p>
+        <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1629275177/waterlily/joanna-kosinska-LbMy35NyCNg-unsplash_p6gdjz.jpg",
+        class: "col-lg-6 col-md-8 col-sm-11", crop: :fill) %>
+        <hr/>
+        <div class="d-flex align-self-center flex-column mr-5 ml-5">
+          <%= link_to "Buy Voucher", new_voucher_path , class: "btn waterlily-btn mb-3 align-self-center", style: "width: 70%" %>
+        </div>
+      </div>
       <hr/>
     </div>
   </body>
