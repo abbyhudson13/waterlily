@@ -27,7 +27,7 @@
   <div class="voucher-terms w-100">
     <h4><strong>Description</strong></h4>
     <% if @subcategory_name == "Vouchers"%>
-      <p>This voucher entitles you to a credit of £<%= @voucher.amount_cents / 10000%> to spend on any treatment at Waterlily Tanning & Beauty. </p>
+      <p>This voucher entitles you to a credit of <%= @voucher.treatment_name.split(" ").first %> to spend on any treatment at Waterlily Tanning & Beauty. </p>
     <% else %>
       <p>This voucher entitles you to the above treatment lasting <%= @voucher.treatment.time %> minutes, or any treatment at Waterlily with the equivalent value.</p>
     <% end %>
