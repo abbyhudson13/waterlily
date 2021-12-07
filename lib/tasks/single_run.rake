@@ -1,3 +1,15 @@
+desc "2021-12-07: Edit photo for waxing"
+task change_waxing_image: :environment do
+  puts "changing image..."
+  waxing = Category.where(name: "waxing").last
+
+  file = URI.open("https://res.cloudinary.com/dqlvehu5z/image/upload/v1638876320/waterlily/matheus-vinicius-EFNJ6f_vzwU-unsplash_uk6h1p.jpg")
+  waxing.photo.attach(io: file, filename: "waxing2.jpg", content_type: "image/jpg")
+  waxing.save!
+
+  puts "Done! 🏁 🏁 🏁"
+end
+
 desc "2021-08-24: Use standard category names"
 task standardize_category_names: :environment do
   puts "renaming categories..."
