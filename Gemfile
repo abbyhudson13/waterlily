@@ -1,13 +1,13 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.6.5"
+ruby "3.2.0"
 gem "jquery-turbolinks"
 gem "jquery-datatables"
 gem "money-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 5.2.4", ">= 5.2.4.1"
+gem "rails", "~> 7.0.4", ">= 7.0.4"
 # Use postgresql as the database for Active Record
 gem "pg", ">= 0.18", "< 2.0"
 # Use Puma as the app server
@@ -38,6 +38,8 @@ gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 gem "rqrcode", "~> 2.0"
 gem "honeybadger", "~> 4.0"
+gem 'psych', '~> 3.3.4'
+gem 'middleman', github: 'middleman/middleman'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
