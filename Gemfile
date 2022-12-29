@@ -25,7 +25,7 @@ gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
-gem "webpacker", "~> 3.0"
+gem "webpacker", "~> 5.0"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary", "~> 1.12.0"
 gem "active_storage_validations"
