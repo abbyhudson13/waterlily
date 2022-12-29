@@ -40,6 +40,8 @@ gem "rqrcode", "~> 2.0"
 gem "honeybadger", "~> 4.0"
 gem 'psych', '~> 3.3.4'
 gem 'middleman', github: 'middleman/middleman'
+gem 'open-uri'
+gem "font-awesome-sass", "~> 6.2.1"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -56,7 +58,6 @@ gem 'middleman', github: 'middleman/middleman'
 gem "bootsnap", ">= 1.1.0", require: false
 
 gem "autoprefixer-rails"
-gem "font-awesome-sass"
 
 group :development, :test do
   gem "pry-byebug"

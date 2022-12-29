@@ -4,8 +4,8 @@
 @import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap/scss/bootstrap";
-@import "font-awesome-sprockets";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+// @import "../../../node_modules/font-awesome-sprockets";
 @import "font-awesome";
 
 // Your CSS partials
@@ -19,7 +19,7 @@
 @import "vouchers/index";
 @import "vouchers/edit";
 @import "categories/show";
-@import 'mapbox-gl/dist/mapbox-gl';
+@import "../../../node_modules/mapbox-gl/dist/mapbox-gl";
 
 html, body {
   min-height: 100vh;

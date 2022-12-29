@@ -6,7 +6,7 @@
     <div class="col-xl-8 col-md-8 col-sm-10">
       <%= @category.description.html_safe %>
       <% if @category.name === "tanning"%>
-        <%= render './shared/lamps'%>
+        <%= render 'shared/lamps'%>
       <% end %>
     </div>
   </div>
@@ -138,5 +138,5 @@
       <%end%>
     </div>
   <% end %>
-  <%= render "./shared/booking_link" %>
+  <%= render "shared/booking_link" %>
 </div>
