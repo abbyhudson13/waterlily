@@ -2,18 +2,20 @@
   "name": "waterlily",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^5.4.3",
     "@babel/core": "^7.20.7",
-    "jquery": "^3.6.3",
     "@popperjs/core": "^2.11.6",
+    "@rails/webpacker": "^5.4.3",
     "babel-loader": "^9.1.0",
     "bootstrap": "^5.2.3",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.6.3",
     "mapbox-gl": "^2.11.0",
     "python": "0.0.4",
-    "select2": "^4.0.13"
+    "select2": "^4.0.13",
+    "webpack": "^5.75.0"
   },
   "devDependencies": {
+    "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
   }
 }

@@ -2,9 +2,7 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.0"
-gem 'jquery-rails', '~> 4.4'
 gem 'jquery-turbolinks', '~> 2.1'
-gem 'jquery-datatables', '~> 1.10', '>= 1.10.20'
 gem "money-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
