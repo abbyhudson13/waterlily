@@ -10,12 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
 //= require jquery
+//= require jquery.turbolinks
+//= require datatables
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require datatables
 //= require_tree .
 
 document.addEventListener('turbolinks:load', () => {
