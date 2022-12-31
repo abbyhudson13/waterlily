@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.0"
 gem 'jquery-turbolinks', '~> 2.1'
 gem "money-rails"
+gem 'jquery-rails', '~> 4.4'
+gem 'jquery-datatables', '~> 1.10', '>= 1.10.20'
+gem 'jsbundling-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "rails", "~> 7.0.4", ">= 7.0.4"
@@ -21,10 +24,9 @@ gem "devise"
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails", "~> 4.2"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem "turbolinks", "~> 5"
+gem 'turbolinks', '~> 5.2', '>= 5.2.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder", "~> 2.5"
-gem "webpacker", "~> 5.0"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary", "~> 1.12.0"
 gem "active_storage_validations"

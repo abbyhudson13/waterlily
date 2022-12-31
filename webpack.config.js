@@ -1,20 +1,20 @@
-const path = require('path');
+const path    = require("path")
+const webpack = require("webpack")
 
 module.exports = {
-  entry: "./src/index.js",
-  mode: "development",
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "main.js"
+  mode: "production",
+  devtool: "source-map",
+  entry: {
+    application: "./app/javascript/application.js"
   },
-  devtool: "sourcemap",
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      }
-    ]
-  }
-};
+  output: {
+    filename: "[name].js",
+    sourceMapFilename: "[file].map",
+    path: path.resolve(__dirname, "app/assets/builds"),
+  },
+  plugins: [
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1
+    })
+  ]
+}
