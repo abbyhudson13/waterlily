@@ -14,21 +14,6 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require datatables
 //= require_tree .
 //= require jquery.turbolinks
 
-
-$(document).on('turbolinks:load', function() {
-    $('#dttb').DataTable({
-      "autoWidth": false,
-      "ordering": false
-    });
-} );
-
-$(document).on('turbolinks:load', function() {
-    $('#dttb2').DataTable({
-      "autoWidth": false,
-      "ordering": false
-    });
-} );

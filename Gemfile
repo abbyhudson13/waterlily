@@ -3,7 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.6.5"
 gem "jquery-turbolinks"
-gem "jquery-datatables"
 gem "money-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
