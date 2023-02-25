@@ -34,7 +34,6 @@
   </div>
   <div class="home-categories text-center d-flex flex-column">
     <h2 class="section-title">Our Services</h2>
-    <hr/>
     <div class="row justify-content-center home-card-container">
       <% @categories.each do |category|%>
       <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 m-3">
@@ -53,24 +52,19 @@
       </div>
       <% end %>
     </div>
-    <hr/>
   </div>
   <div class="about-us d-flex flex-column align-items-center mt-20">
     <h2 class="section-title">About Us</h2>
-    <hr/>
     <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1589706104/WhatsApp_Image_2020-05-08_at_16.15.02_j31vjz.jpg",
     class: "col-lg-6 col-md-8 col-sm-11", crop: :fill) %>
-    <hr/>
     <div class="about-text text-center col-lg-8 col-md-8 col-sm-10">
       <p>We have been based in Timberhill in the heart of Norwich for over 25 years. We offer a range of treatments for customers, including Vertical Tanning, Manicures, Pedicures, Waxing, Facials and Massage. </p>
       <p class="pt-0">You can relax from head to toe in our friendly, welcoming salon and leave feeling rejuvenated. You'll be glad you stopped by!</p>
       <%= render './shared/lamps' %>
     </div>
-    <hr/>
   </div>
   <div class="special-offers-home d-flex flex-column align-items-center mt-20">
     <h2 class="section-title">Special Offers</h2>
-    <hr/>
     <div class="row justify-content-around">
       <% @special_offers.sample(6).each do |offer|%>
       <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 m-3">
@@ -94,19 +88,16 @@
       </div>
       <%= render "./shared/booking_link" %>
     </div>
-    <div class="about-us d-flex flex-column align-items-center mt-20">
+    <div class="about-us d-flex flex-column align-items-center mt-20 pb-20">
       <h2 class="section-title">Gift Vouchers</h2>
-      <hr/>
       <div class="about-text text-center col-lg-8 col-md-8 col-sm-10">
         <p>The perfect gift- treat yourself or a loved one to one of our vouchers. You can either buy a specific treatment or a voucher with monetary value, with the option to add a personal message.</p>
         <p>The voucher will be e-mailed to you, and you can either print it or download it. It will be valid for 6 months after purchase.</p>
         <%= cl_image_tag("https://res.cloudinary.com/dqlvehu5z/image/upload/v1629275177/waterlily/joanna-kosinska-LbMy35NyCNg-unsplash_p6gdjz.jpg",
         class: "col-lg-6 col-md-8 col-sm-11", crop: :fill) %>
-        <hr/>
         <div class="d-flex align-self-center flex-column mr-5 ml-5">
           <%= link_to "Buy Voucher", new_voucher_path , class: "btn waterlily-btn mb-3 align-self-center", style: "width: 70%" %>
         </div>
       </div>
-      <hr/>
     </div>
   </body>
