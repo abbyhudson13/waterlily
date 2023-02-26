@@ -36,15 +36,19 @@
     <h2 class="section-title">Our Services</h2>
     <div class="row justify-content-center home-card-container">
       <% @categories.each do |category|%>
-      <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 m-3">
-        <%= link_to category_path(category) do %>
-        <div class="wl-card m-3">
-          <div class="card-content d-flex flex-column text-center">
-            <% if category.photo.attached?%>
-            <%= cl_image_tag category.photo.key, width: 300, height: 200, class: "card-photo"%>
-            <% end %>
-            <div class="wl-card-title pt-2 pb-2">
-              <%= category.public_name %>
+        <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 m-3">
+          <div class="offer-card col">
+            <div class="d-flex card-content flex-column text-center align-items-center justify-content-center">
+            <%= link_to category_path(category) do %>
+            <div class="wl-card m-3">
+              <div class="card-content d-flex flex-column text-center m-20">
+                <% if category.photo.attached?%>
+                <%= cl_image_tag category.photo.key, width: 300, height: 200, class: "card-photo"%>
+                <% end %>
+                <div class="wl-card-title pt-2 pb-2">
+                  <%= category.public_name %>
+                </div>
+              </div>
             </div>
           </div>
         </div>

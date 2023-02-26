@@ -1,5 +1,5 @@
 .wl-card {
-  border-radius: 5px;
+  width: 300px;
   color: #343a40;
   &:hover {
     color: #A8A8A8;
@@ -21,15 +21,11 @@
 }
 
 .wl-card-title {
-  width: 300px;
   border: 1px solid #CDCDCD;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
 }
 
 .card-photo {
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  padding-top: 20px;
 }
 
 .offer-card {
@@ -39,9 +35,6 @@
   text-align: center;
   color:white;
   align-content: center;
-  img {
-    border-radius: 5px;
-  }
 }
 
 .offer-image {
