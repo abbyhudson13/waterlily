@@ -28,7 +28,6 @@ hr{
 }
 
 .about-us{
-  margin-top: 50px;
   background-color: #E4EBC8;
   text-align: center;
   color: #343a40;
@@ -43,7 +42,7 @@ hr{
   border: 1px solid #CDCDCD !important;
 }
 
-.about-text, .booking-link{
+.about-text, .booking-link, .gift-voucher-text {
   background-color: white;
   border-radius: 5px;
   p{
@@ -56,8 +55,14 @@ hr{
   padding: 10px;
 }
 
+.gift-voucher-text{
+  padding: 10px;
+  margin-top:20px;
+}
+
 .homepage-photo {
   margin-bottom: 30px;
+  margin-top: 20px;
   width: 70%;
 }
 
@@ -74,8 +79,8 @@ hr{
 
 .search-complete{
   background-color: white;
-  width: 300px;
-  margin-left: -26px;
+  width: 301px;
+  margin-left: -20px;
   padding: 5px;
   a {
     text-decoration: none;
