@@ -1,16 +1,17 @@
 const searchInput = document.getElementById('query');
 const suggestions = document.querySelector('.suggestions');
+const body= document.querySelector('.content'); 
 
-  const subcategories = JSON.parse(document.getElementById('search-data').dataset.subcategories)
+const subcategories = JSON.parse(document.getElementById('search-data').dataset.subcategories)
 
-  function findMatches(wordToMatch, subcategories) {
+function findMatches(wordToMatch, subcategories) {
     return subcategories.filter(subcat => {
     const regex = new RegExp(wordToMatch, 'gi');
     return subcat.match(regex);
-});
-  }
+  });
+}
 
-  function displayMatches() {
+function displayMatches() {
   const matchArray = findMatches(this.value, subcategories);
   const html = matchArray.map(result => {
     return `
@@ -22,7 +23,16 @@ const suggestions = document.querySelector('.suggestions');
   suggestions.innerHTML = html;
 }
 
+function hideMatches(event) {
+  if (event.target != suggestions) {
+    suggestions.innerHTML = ``;
+  }
+}
+
 searchInput.addEventListener('keyup', displayMatches);
+body.addEventListener('click', hideMatches)
+
 
 export { findMatches };
 export { displayMatches };
+export { hideMatches };
