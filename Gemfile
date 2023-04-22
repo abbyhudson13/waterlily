@@ -54,7 +54,7 @@ gem "honeybadger", "~> 4.0"
 gem "bootsnap", ">= 1.1.0", require: false
 
 gem "autoprefixer-rails"
-gem "font-awesome-sass"
+gem "font-awesome-sass", "~> 6.4.0"
 
 group :development, :test do
   gem "pry-byebug"
