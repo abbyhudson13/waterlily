@@ -5,9 +5,6 @@
     <hr/>
     <div class="col-xl-8 col-md-8 col-sm-10">
       <%= @category.description.html_safe %>
-      <% if @category.name === "tanning"%>
-        <%= render './shared/lamps'%>
-      <% end %>
     </div>
   </div>
   <% unless @category.name === "cosmetic_treatments" %>

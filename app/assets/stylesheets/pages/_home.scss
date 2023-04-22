@@ -26,11 +26,12 @@ hr{
 .home-categories h2{
   color: #343a40;
 }
+
 .about-us{
-  background-color: #E4EBC7;
+  background-color: #E4EBC8;
   text-align: center;
   color: #343a40;
-
+  padding-bottom: 40px;
 }
 
 #shop-photo {
@@ -41,13 +42,24 @@ hr{
   border: 1px solid #CDCDCD !important;
 }
 
-.about-text, .booking-link{
+.about-text, .booking-link, .gift-voucher-text{
   background-color: white;
   border-radius: 5px;
   p{
     margin: 0px;
     padding: 15px;
   }
+}
+
+.gift-voucher-text{
+  padding: 10px;
+  margin-top:20px;
+}
+
+.homepage-photo {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 70%;
 }
 
 .about-text {
@@ -67,6 +79,8 @@ hr{
 
 .search-complete{
   background-color: white;
+  width: 301px;
+  margin-left: -20px;
   width: 300px;
   margin-left: -26px;
   padding: 5px;
