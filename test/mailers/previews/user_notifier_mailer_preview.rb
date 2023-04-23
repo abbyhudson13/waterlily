@@ -11,4 +11,9 @@ class UserNotifierMailerPreview < ActionMailer::Preview
     @voucher = Voucher.first
     UserNotifierMailer.notify_waterlily_email(@user, @voucher)
   end
+
+  def out_of_office_email
+    @name = "Abby"
+    UserNotifierMailer.out_of_office_email(@name, "abby@abby.com")
+  end
 end
