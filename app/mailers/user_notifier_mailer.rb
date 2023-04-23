@@ -14,4 +14,9 @@ class UserNotifierMailer < ApplicationMailer
     mail(to: "indulge@water-lily.co.uk",
          subject: "A gift voucher has been purchased!")
   end
+
+  def out_of_office_email(name, email)
+    @name = name
+    mail(to: email, subject: "Thank you for your message.")
+  end
 end
