@@ -14,6 +14,6 @@ class UserNotifierMailerPreview < ActionMailer::Preview
 
   def out_of_office_email
     @name = "Abby"
-    UserNotifierMailer.out_of_office_email(@name, "abby@abby.com")
+    UserNotifierMailer.auto_reply_email(@name, "abby@abby.com")
   end
 end

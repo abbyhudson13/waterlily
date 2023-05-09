@@ -15,7 +15,7 @@ class UserNotifierMailer < ApplicationMailer
          subject: "A gift voucher has been purchased!")
   end
 
-  def out_of_office_email(name, email)
+  def auto_reply_email(name, email)
     @name = name
     mail(to: email, subject: "Thank you for your message.")
   end
