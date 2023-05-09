@@ -8,7 +8,8 @@ class Contact < MailForm::Base
     {
       subject: "Contact Form",
       to: "indulge@water-lily.co.uk",
-      from: "indulge@water-lily.co.uk"
+      from: "indulge@water-lily.co.uk",
+      reply_to: email
     }
   end
 end

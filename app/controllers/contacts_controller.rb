@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
     @contact.request = request
     if @contact.deliver
       flash.now[:error] = nil
-      UserNotifierMailer.out_of_office_email(@contact.name, @contact.email).deliver
+      UserNotifierMailer.auto_reply_email(@contact.name, @contact.email).deliver
       redirect_to root_path, notice: "Message sent successfully"
     else
       render :new
