@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard"
   resources :categories, only: [:new, :create, :index, :edit, :update, :show], param: :name
   resources :subcategories, only: [:new, :create, :index, :edit, :update]
-  resources :treatments, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :treatments, only: [:new, :create, :index, :edit, :update, :destroy] do
+    post :deactivate, on: :member
+    post :activate, on: :member
+  end
   resources :contacts, only: [:new, :create]
   resources :vouchers, only: [:new, :show, :create, :index, :edit, :update] do
     resources :payments, only: :new

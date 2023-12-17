@@ -87,7 +87,7 @@
             <th>Price</th>
           </thead>
           <tbody>
-            <% subcategory.treatments.each do |treatment|%>
+            <% subcategory.treatments.active.each do |treatment|%>
             <tr>
               <% if !treatment.description == nil?%>
                 <td><%= treatment.title%>
