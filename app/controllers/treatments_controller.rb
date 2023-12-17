@@ -1,5 +1,5 @@
 class TreatmentsController < ApplicationController
-  before_action :set_treatment, only: [:edit, :update, :destroy]
+  before_action :set_treatment, only: [:edit, :update, :destroy, :deactivate, :activate]
   before_action :set_categories
   def index
     if params[:query].present?
@@ -9,9 +9,9 @@ class TreatmentsController < ApplicationController
       OR subcategories.description ILIKE :query \
       OR treatments.description ILIKE :query \
       "
-      @treatments = policy_scope(Treatment).joins(:subcategory).where(sql_query, query: "%#{params[:query]}%")
+      @treatments = policy_scope(Treatment).active.joins(:subcategory).where(sql_query, query: "%#{params[:query]}%")
     else
-      @treatments = policy_scope(Treatment).all
+      @treatments = policy_scope(Treatment).active
     end
   end
 
@@ -32,6 +32,18 @@ class TreatmentsController < ApplicationController
   end
 
   def edit
+  end
+
+  def deactivate
+    @treatment.deactivate!
+    flash[:notice] = "Treatment has been deactivated"
+    redirect_to dashboard_path
+  end
+
+  def activate
+    @treatment.activate!
+    redirect_to dashboard_path
+    flash.now[:success] = "Treatment has been activated"
   end
 
   def update

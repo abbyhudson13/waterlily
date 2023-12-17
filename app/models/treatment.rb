@@ -13,6 +13,15 @@ class Treatment < ApplicationRecord
     self.deactivated_at = Time.zone.now
     save
   end
+  
+  def activate!
+    self.deactivated_at = nil
+    save
+  end
+
+  def active?
+    deactivated_at.nil?
+  end
 
   def to_label
     if special_offer == true
