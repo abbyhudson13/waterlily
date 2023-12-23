@@ -29,7 +29,7 @@
             <th>Price</th>
           </thead>
           <tbody>
-            <% @category.treatments.active.each do |treatment|%>
+            <% @category.treatments.active.order(standard_price_cents: :asc).each do |treatment|%>
             <tr>
               <% if !treatment.description == nil?%>
               <td><%= treatment.title%>
@@ -87,7 +87,7 @@
             <th>Price</th>
           </thead>
           <tbody>
-            <% subcategory.treatments.active.each do |treatment|%>
+            <% subcategory.treatments.active.order(standard_price_cents: :asc).each do |treatment|%>
             <tr>
               <% if !treatment.description == nil?%>
                 <td><%= treatment.title%>
