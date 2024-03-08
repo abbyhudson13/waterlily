@@ -38,6 +38,7 @@ gem "wicked_pdf"
 gem "wkhtmltopdf-binary"
 gem "rqrcode", "~> 2.0"
 gem "honeybadger", "~> 4.0"
+gem 'invisible_captcha'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

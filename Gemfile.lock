@@ -124,6 +124,8 @@ GEM
       domain_name (~> 0.5)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    invisible_captcha (2.2.0)
+      rails (>= 5.2)
     io-like (0.3.1)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
@@ -406,6 +408,7 @@ DEPENDENCIES
   faker (~> 1.8, >= 1.8.7)
   font-awesome-sass (~> 6.4.0)
   honeybadger (~> 4.0)
+  invisible_captcha
   jbuilder (~> 2.5)
   jquery-datatables
   jquery-turbolinks

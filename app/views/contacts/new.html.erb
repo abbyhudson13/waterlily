@@ -6,6 +6,7 @@
       </div>
       <div class="contact-form-content">
         <%= simple_form_for @contact do |f| %>
+        <%= f.invisible_captcha %>
         <%= f.input :name %>
         <%= f.input :email %>
         <%= f.input :message, as: :text, :input_html => { class: 'test', :cols => 5, :rows => 20 } %>
