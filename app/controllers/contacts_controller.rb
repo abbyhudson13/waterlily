@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_categories
+  invisible_captcha only: [:create, :update]
   def new
     @contact = Contact.new
   end
