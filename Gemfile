@@ -34,7 +34,7 @@ gem "mail_form"
 gem "stripe"
 gem "pundit"
 gem "stripe_event"
-gem "wicked_pdf"
+gem 'wicked_pdf', '~> 2.1'
 gem "wkhtmltopdf-binary"
 gem "rqrcode", "~> 2.0"
 gem "honeybadger", "~> 4.0"
