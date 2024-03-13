@@ -15,7 +15,7 @@
     <p style="text-align:center">Price: £<%= @voucher.amount_cents / 10000 %></p>
     <br>
     <div style="text-align:center">
-      <span style="text-align:center;background: #AFB889;padding:8px;border-radius: 5px;"><%= link_to "View Voucher", voucher_url(@voucher.id, format: :pdf), style: "color: white!important;text-decoration:none;" %></span>
+      <span style="text-align:center;background: #AFB889;padding:8px;border-radius: 5px;"><%= link_to "View Voucher", voucher_url(@voucher.id, format: :html), style: "color: white!important;text-decoration:none;" %></span>
     </div>
     <br>
   </td>
