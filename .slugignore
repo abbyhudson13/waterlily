@@ -1,0 +1,10 @@
+*.md
+log/*
+tmp/*
+spec/*
+test/*
+node_modules/
+.vendor_bundle/
+.bundle/
+.git/
+.DS_Store
