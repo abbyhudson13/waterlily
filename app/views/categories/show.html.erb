@@ -31,8 +31,8 @@
           <tbody>
             <% @category.treatments.active.order(standard_price_cents: :asc).each do |treatment|%>
             <tr>
-              <% if !treatment.description == nil?%>
-              <td><%= treatment.title%>
+              <% if !treatment.description == nil? %>
+              <td><%= treatment.title %>
               <a href="#" data-toggle="modal" data-target="#modal-all-<%=treatment.id%>">
                 <i class="fas fa-info-circle" ></i>
               </a>
