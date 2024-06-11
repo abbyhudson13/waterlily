@@ -43,9 +43,6 @@ class VouchersController < ApplicationController
     generate_qr_code
     respond_to do |format|
       format.html
-      # format.pdf do
-      #   render pdf: "show", template: "vouchers/show.html.erb", layout: "pdf.html.erb"
-      # end
     end
   end
 

@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.4"
+ruby "2.6.5"
 gem "jquery-turbolinks"
 gem "jquery-datatables"
 gem "money-rails"
@@ -34,8 +34,6 @@ gem "mail_form"
 gem "stripe"
 gem "pundit"
 gem "stripe_event"
-gem 'wicked_pdf', '~> 2.1'
-gem "wkhtmltopdf-binary"
 gem "rqrcode", "~> 2.0"
 gem "honeybadger", "~> 4.0"
 gem 'invisible_captcha'
