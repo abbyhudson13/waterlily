@@ -20,14 +20,16 @@ class VouchersController < ApplicationController
     authorize @voucher
     session = Stripe::Checkout::Session.create(
       payment_method_types: ["card"],
-      price_data: {
-        currency: "gbp",
-        unit_amount: price,
+      line_items: [{
+        price_data: {
+          currency: "gbp",
+          unit_amount: price,
+          product_data: {
+            name: treatment.title
+          }
+        },
         quantity: 1,
-        product_data: {
-          name: treatment.title
-        }
-      },
+      }],
       mode: 'payment',
       success_url: vouchers_url,
       cancel_url: vouchers_url
